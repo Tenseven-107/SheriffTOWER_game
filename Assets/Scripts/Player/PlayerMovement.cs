@@ -1,16 +1,23 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
 
     float speed = 0;
-    [SerializeField] float maxSpeed = 5.5f;
-    [SerializeField] float acceleration = 1.25f;
+    [SerializeField] float maxSpeed = 7.5f;
+    [SerializeField] float acceleration = 0.5f;
     Vector2 velocity = Vector2.zero;
     Rigidbody2D rb;
+
+    [SerializeField] float dashCooldown = 0.45f;
+    [SerializeField] float dashTime = 0.12f;
+    [SerializeField] float dashSpeed = 25.5f;
+    float normalSpeed;
+    float lastDash;
 
     [SerializeField] GameObject torsoObject;
     [SerializeField] GameObject feetObject;
@@ -22,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        normalSpeed = maxSpeed;
     }
 
 
@@ -31,6 +39,12 @@ public class PlayerMovement : MonoBehaviour
         Movement();
         SetAnimations();
     }
+
+    private void Update()
+    {
+        Dashing();
+    }
+
 
 
     void Movement()
@@ -53,6 +67,34 @@ public class PlayerMovement : MonoBehaviour
 
         rb.MovePosition(rb.position + velocity);
     }
+
+
+
+    void Dashing()
+    {
+        if (Time.time - lastDash < dashCooldown)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            lastDash = Time.time;
+
+            maxSpeed = dashSpeed;
+            speed = dashSpeed;
+
+            StartCoroutine(Dash());
+        }
+    }
+
+    IEnumerator Dash()
+    {
+        yield return new WaitForSeconds(dashTime);
+        maxSpeed = normalSpeed;
+        yield break;
+    }
+
 
 
     void SetAnimations()
