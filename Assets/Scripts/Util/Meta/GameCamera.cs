@@ -78,7 +78,7 @@ public class GameCamera : MonoBehaviour
     // Screenshake
     public void screenshake(float screenshake_time, float screenshake_intensity)
     {
-        if (target != null /*&& !CheckIfBordered()*/) transform.position = target.transform.position + cam_offset;
+        if (target != null && !CheckIfBordered()) transform.position = target.transform.position + cam_offset;
 
         this.screenshakeTime = screenshake_time;
         this.screenshakeIntensity = screenshake_intensity / screenshakeMod;
@@ -105,19 +105,14 @@ public class GameCamera : MonoBehaviour
 
 
     // Check if camera is not touching the border
-    //bool CheckIfBordered()
-    //{
-    //    if (confined)
-    //    {
-    //        float x = transform.position.x;
-    //        float y = transform.position.y;
-
-    //        if (x >= X_confiner || x <= -X_confiner || y >= Y_confiner || y <= -Y_confiner)
-    //        {
-    //            return true;
-    //        }
-    //        else return false;
-    //    }
-    //    else return false;
-    //}
+    bool CheckIfBordered()
+    {
+        float x = transform.position.x;
+        float y = transform.position.y;
+        if (x >= X_confiner || x <= -X_confiner || y >= Y_confiner || y <= -Y_confiner)
+        {
+            return true;
+        }
+        else return false;
+    }
 }

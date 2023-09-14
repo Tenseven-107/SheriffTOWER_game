@@ -123,6 +123,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 torsoAnimator.Play("Walk");
             }
+            if (equip == EquipState.ARMED)
+            {
+                torsoAnimator.Play("Armed");
+            }
+            if (equip == EquipState.ITEM)
+            {
+                torsoAnimator.Play("Item");
+            }
 
             feetAnimator.Play("Walk");
         }

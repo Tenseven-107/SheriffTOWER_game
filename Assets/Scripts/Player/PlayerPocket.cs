@@ -10,8 +10,9 @@ public class PlayerPocket : MonoBehaviour
     [SerializeField] public GameObject weapon;
     [SerializeField] Transform weaponSlot;
 
-    SpriteRenderer itemSprite;
+    [SerializeField] SpriteRenderer itemSprite;
     PlayerMovement player;
+
 
 
     private void Start()
@@ -20,7 +21,16 @@ public class PlayerPocket : MonoBehaviour
     }
 
 
-    public void Add_item(GameObject newItem)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && heldItem != null)
+        {
+            DropItem();
+        }
+    }
+
+
+    public void AddItem(GameObject newItem)
     {
         if (heldItem != null)
         {
@@ -32,11 +42,7 @@ public class PlayerPocket : MonoBehaviour
         
         if (itemData.type == ItemData.ItemTypes.WEAPON)
         {
-            weapon = itemData.weapon;
-            weapon.transform.parent = weaponSlot;
-
-            Instantiate(weapon);
-
+            weapon = Instantiate(itemData.weapon, weaponSlot);
             player.equip = PlayerMovement.EquipState.ARMED;
         }
         else
@@ -49,14 +55,20 @@ public class PlayerPocket : MonoBehaviour
 
     void DropItem()
     {
-        // Create instance of item in container on position
+        heldItem.SetActive(true);
+        heldItem.GetComponent<BaseItem>().DropBuffer();
+        heldItem.transform.position = transform.position;
 
         // Place tower if ItemType is TOWER
+        if (itemData.type == ItemData.ItemTypes.WEAPON)
+        {
+            Destroy(weapon);
+        }
 
         weapon = null;
         heldItem = null;
         itemData = null;
-        itemSprite = null;
+        itemSprite.sprite = null;
 
         player.equip = PlayerMovement.EquipState.UNARMED;
     }

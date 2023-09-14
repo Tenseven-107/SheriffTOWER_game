@@ -11,10 +11,15 @@ public class ItemData : MonoBehaviour
 
     [SerializeField] public GameObject weapon;
 
-    // Start is called before the first frame update
+
+
     void Start()
     {
-        
+        if (itemSprite == null)
+        {
+            SpriteRenderer currentSprite = gameObject.GetComponent<SpriteRenderer>();
+            itemSprite = currentSprite.sprite;
+        }
     }
 
     // Update is called once per frame
