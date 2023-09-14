@@ -13,6 +13,7 @@ public class PlayerPocket : MonoBehaviour
     [SerializeField] SpriteRenderer itemSprite;
     PlayerMovement player;
 
+    [SerializeField] Transform dropPos;
 
 
     private void Start()
@@ -57,7 +58,8 @@ public class PlayerPocket : MonoBehaviour
     {
         heldItem.SetActive(true);
         heldItem.GetComponent<BaseItem>().DropBuffer();
-        heldItem.transform.position = transform.position;
+
+        heldItem.transform.position = dropPos.position;
 
         // Place tower if ItemType is TOWER
         if (itemData.type == ItemData.ItemTypes.WEAPON)
