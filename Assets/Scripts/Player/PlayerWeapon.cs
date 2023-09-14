@@ -13,7 +13,6 @@ public class PlayerWeapon : MonoBehaviour
     bool reloading = false;
     int currentBullets = 6;
 
-    float rot = 0;
     Transform spriteTrans;
     SpriteRenderer sprite;
 
@@ -54,12 +53,14 @@ public class PlayerWeapon : MonoBehaviour
 
             if (currentBullets <= 0)
             {
+                spriteTrans.DOLocalRotate(new Vector3(0, 0, 360), reloadTime, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.OutElastic);
                 StartCoroutine(ReloadLoop());
             }
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
+            spriteTrans.DOLocalRotate(new Vector3(0, 0, 360), reloadTime, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.OutElastic);
             StartCoroutine(ReloadLoop());
         }
     }
@@ -82,7 +83,12 @@ public class PlayerWeapon : MonoBehaviour
         mouseScreenPos.y -= startingScreenPos.y;
 
         var angle = Mathf.Atan2(mouseScreenPos.y, mouseScreenPos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), 0.1f);
+        
+        if (reloading == false)
+        {
+            spriteTrans.rotation = Quaternion.Lerp(spriteTrans.rotation, Quaternion.Euler(0, 0, angle), 0.5f);
+        }
 
         if (transform.rotation.eulerAngles.z > 90 && transform.rotation.eulerAngles.z < 270)
         {

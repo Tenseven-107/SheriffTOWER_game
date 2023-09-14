@@ -28,9 +28,10 @@ Transform:
   m_LocalPosition: {x: 0.977, y: -0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 746828870252218758}
   m_Father: {fileID: 180083901515043358}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5313469043370425278
 SpriteRenderer:
@@ -108,11 +109,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4718128529193889995}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.858, y: 0.333, z: 0}
+  m_LocalPosition: {x: 0.88100004, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 180083901515043358}
+  m_Father: {fileID: 1826112449884490779}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5494146564253181480
@@ -145,7 +146,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 746828870252218758}
   - {fileID: 1826112449884490779}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -181,6 +181,6 @@ MonoBehaviour:
   fireTrans: {fileID: 746828870252218758}
   bullet: {fileID: 334692974232083145, guid: 81f7c9b526f42494385593b9da081367, type: 3}
   juice: 1
-  screenshakeTime: 0.05
-  screenshakeIntensity: 0.55
+  screenshakeTime: 0.3
+  screenshakeIntensity: 0.05
   audio: {fileID: 0}
