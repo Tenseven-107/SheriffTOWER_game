@@ -20,7 +20,7 @@ public class Entity : MonoBehaviour
     bool flash = true; // If enemy can flash
     WaitForSeconds flashTimer = new WaitForSeconds(0.05f);
     WaitForSeconds flashTimerShort = new WaitForSeconds(0.025f);
-    SpriteRenderer sprite;
+    public SpriteRenderer sprite;
     public GameObject deathEffect;
     public Animator anims;
 
@@ -36,7 +36,6 @@ public class Entity : MonoBehaviour
     private void Start()
     {
         flash = true;
-        sprite = GetComponent<SpriteRenderer>();
     }
 
 

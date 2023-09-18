@@ -16,6 +16,19 @@ public class Path : MonoBehaviour
         line.GetPositions(pointArray);
 
         points = new List<Vector3>(pointArray);
+        NormalizeZAxis();
+
+        line.enabled = false;
+    }
+
+    void NormalizeZAxis()
+    {
+        for (int i = 0; i < points.Count; i++)
+        {
+            Vector2 current = points[i];
+            Vector3 newPos = new Vector3(current.x, current.y, 0);
+            points[i] = newPos;
+        }
     }
 
 
@@ -27,19 +40,17 @@ public class Path : MonoBehaviour
 
     public Vector2 NextPoint(Vector2 currentPoint)
     {
-        Vector2 nextPoint = Vector2.zero;
-
         foreach (var point in points)
         {
-            if (points.Contains(point))
+            if ((Vector2)point == currentPoint)
             {
                 int index = points.IndexOf(point) + 1;
-                nextPoint = points[index];
+                Vector2 nextPoint = points[index];
 
                 return nextPoint;
             }
         }
 
-        return nextPoint;
+        return Vector2.zero;
     }
 }

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c987d4eafd580264f85f4bf020342482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.1
+  cooldown: 0.15
   bullets: 1
   fireTrans: {fileID: 746828870252218758}
   bullet: {fileID: 334692974232083145, guid: 81f7c9b526f42494385593b9da081367, type: 3}

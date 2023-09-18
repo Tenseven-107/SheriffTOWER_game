@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PathFollower : MonoBehaviour
 {
-    [SerializeField] float speed = 2;
+    [SerializeField][Range(0.5f, 30)] float speed = 2;
+    float moveDistance = 0.5f;
     Vector2 velocity = Vector2.zero;
     Vector2 currentDestination = Vector2.zero;
 
@@ -27,7 +28,7 @@ public class PathFollower : MonoBehaviour
 
     void MoveLoop()
     {
-        if (rb.position != currentDestination)
+        if (Vector2.Distance(rb.position, currentDestination) > moveDistance)
         {
             Vector2 direction = currentDestination - rb.position;
             Vector2 normalizedVector = Vector3.Normalize(direction);
@@ -36,10 +37,14 @@ public class PathFollower : MonoBehaviour
 
             rb.MovePosition(rb.position + velocity);
         }
+        else
+        {
+            currentDestination = path.NextPoint(currentDestination);
+        }
     }
 
 
-    void SetPath(Path pathToFollow)
+    public void SetPath(Path pathToFollow)
     {
         path = pathToFollow;
         currentDestination = path.GetFirst();

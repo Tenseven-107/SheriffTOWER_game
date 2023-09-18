@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5041667323942154136}
   - component: {fileID: 9183281157904495466}
   - component: {fileID: 2318240718435043540}
+  - component: {fileID: 5385583990955941415}
   m_Layer: 0
   m_Name: GunBullet
   m_TagString: Untagged
@@ -136,10 +137,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a426450ebf4b3647be9cb3154d1422a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 35
+  speed: 27.5
+  bulletLayer: 8
+--- !u!114 &5385583990955941415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334692974232083145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452d6cb77bc2b4746891d161bc42bd6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   damage: 1
   team: 0
-  piercing: 0
-  wallPiercing: 0
-  color: {r: 1, g: 1, b: 1, a: 1}
-  fx: {fileID: 0}
+  removeAfter: 1
