@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class GameCamera : MonoBehaviour
 {
@@ -56,6 +57,16 @@ public class GameCamera : MonoBehaviour
         transform.position = pos;
     }
 
+    Vector3 GetClampedPos()
+    {
+        Vector3 pos = target.transform.position;
+
+        pos.x = Mathf.Clamp(pos.x, -minusX_confiner, X_confiner);
+        pos.y = Mathf.Clamp(pos.y, -minusY_confiner, Y_confiner);
+
+        return pos;
+    }
+
 
 
     // Hitstop
@@ -78,7 +89,7 @@ public class GameCamera : MonoBehaviour
     // Screenshake
     public void screenshake(float screenshake_time, float screenshake_intensity)
     {
-        if (target != null && !CheckIfBordered()) transform.position = target.transform.position + cam_offset;
+        if (target != null && CheckIfBordered() == false) transform.position = GetClampedPos() + cam_offset;
 
         this.screenshakeTime = screenshake_time;
         this.screenshakeIntensity = screenshake_intensity / screenshakeMod;
