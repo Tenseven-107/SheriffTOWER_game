@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class TowerRanged : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    BulletShooter shooter;
+    Transform shooterTrans;
+
+    TowerDetection area;
+
+
+    private void Start()
     {
-        
+        shooter = GetComponentInChildren<BulletShooter>();
+        shooterTrans = shooter.transform;
+
+        area = GetComponent<TowerDetection>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void FixedUpdate()
     {
-        
+        if (area.lockedEnemy != null)
+        {
+            Transform enemyTrans = area.lockedEnemy.transform;
+            Vector2 aimPos = enemyTrans.position - transform.position;
+
+            var angle = Mathf.Atan2(aimPos.y, aimPos.x) * Mathf.Rad2Deg;
+            shooterTrans.rotation = Quaternion.Euler(0, 0, angle);
+
+            shooter.Fire();
+        }
     }
 }
