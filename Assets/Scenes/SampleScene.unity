@@ -226,6 +226,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   areaSize: 2.5
+  areaLayer: 8
+  areaLayerIgnore: 0
   range: 0
   testing: 1
   lockedEnemy: {fileID: 0}
