@@ -19,6 +19,7 @@ public class BulletShooter : MonoBehaviour
     [Range(0, 10)] public float screenshakeIntensity = 0; // Screenshake intensity
 
     public RandomAudio audio; // Audio when fired
+    public Animator anims;
 
 
     // Set up
@@ -53,6 +54,7 @@ public class BulletShooter : MonoBehaviour
         }
 
         if (audio != null) audio.PlaySound();
+        if (anims != null) anims.Play("Attack");
     }
 
 

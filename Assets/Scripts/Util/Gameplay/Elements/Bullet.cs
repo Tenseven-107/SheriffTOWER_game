@@ -7,6 +7,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] float speed = 10; // Speed of the bullet
+    [SerializeField] float timeAlive = 5;
     [SerializeField] int bulletLayer = 8;
     Rigidbody2D rb; // Rigidbody
 
@@ -18,6 +19,8 @@ public class Bullet : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * speed;
+
+        StartCoroutine(AliveLoop());
     }
 
 
@@ -25,5 +28,19 @@ public class Bullet : MonoBehaviour
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
+    }
+
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
+
+    // Time alive
+    IEnumerator AliveLoop()
+    {
+        yield return new WaitForSeconds(timeAlive);
+        Destroy(gameObject);
+        yield break;
     }
 }
