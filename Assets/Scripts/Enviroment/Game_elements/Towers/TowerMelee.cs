@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class TowerMelee : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    TowerMeleeDamager damager;
+    TowerDetection area;
+
+
+    private void Start()
     {
-        
+        damager = GetComponentInChildren<TowerMeleeDamager>();
+        area = GetComponent<TowerDetection>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void Update()
     {
-        
+        if (area.lockedEnemy != null)
+        {
+            damager.DamageArea();
+        }
     }
 }

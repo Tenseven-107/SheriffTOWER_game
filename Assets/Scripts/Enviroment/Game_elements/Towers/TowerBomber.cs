@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class TowerBomber : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    TowerBomberShooter shooter;
+    TowerDetection area;
+
+    private void Start()
     {
-        
+        shooter = GetComponentInChildren<TowerBomberShooter>();
+        area = GetComponent<TowerDetection>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (area.lockedEnemy != null)
+        {
+            Vector2 enemyLocation = area.lockedEnemy.transform.position;
+            shooter.Bomb(enemyLocation);
+        }
     }
 }
