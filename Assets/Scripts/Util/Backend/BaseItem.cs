@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class BaseItem : MonoBehaviour
 {
+    [SerializeField] public GameObject PlaceOnDrop;
+    [SerializeField] string ContainerTag = "TowerContainer";
+
     float dropBufferTime = 0.8f;
     BoxCollider2D coll;
+
 
     private void Start()
     {
@@ -32,10 +36,22 @@ public class BaseItem : MonoBehaviour
     }
 
 
-    public void DropBuffer()
+    public void Drop()
     {
-        coll.enabled = false;
-        StartCoroutine(BufferTime());
+        if (PlaceOnDrop != null)
+        {
+            Transform container = GameObject.FindWithTag(ContainerTag).transform;
+            PositionToGridpos posToGrid = gameObject.AddComponent<PositionToGridpos>();
+
+            Instantiate(PlaceOnDrop, posToGrid.PositionToGrid(transform.position), Quaternion.Euler(0,0,0), container);
+
+            Destroy(gameObject);
+        }
+        else
+        {
+            coll.enabled = false;
+            StartCoroutine(BufferTime());
+        }
     }
 
     IEnumerator BufferTime()

@@ -16,6 +16,8 @@ public class TowerRaycastDetect : MonoBehaviour
 
     private void Start()
     {
+        gameObject.layer = areaLayerSelf;
+
         SetDirection();
     }
 

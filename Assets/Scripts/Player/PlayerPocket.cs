@@ -56,10 +56,10 @@ public class PlayerPocket : MonoBehaviour
 
     void DropItem()
     {
-        heldItem.SetActive(true);
-        heldItem.GetComponent<BaseItem>().DropBuffer();
-
         heldItem.transform.position = dropPos.position;
+
+        heldItem.SetActive(true);
+        heldItem.GetComponent<BaseItem>().Drop();
 
         // Place tower if ItemType is TOWER
         if (itemData.type == ItemData.ItemTypes.WEAPON)
