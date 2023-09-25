@@ -14,11 +14,13 @@ public class PlayerPocket : MonoBehaviour
     PlayerMovement player;
 
     [SerializeField] Transform dropPos;
+    PlacementMarker placementMarker;
 
 
     private void Start()
     {
         player = GetComponent<PlayerMovement>();
+        placementMarker = GetComponentInChildren<PlacementMarker>();
     }
 
 
@@ -28,6 +30,13 @@ public class PlayerPocket : MonoBehaviour
         {
             DropItem();
         }
+
+        if (heldItem != null && itemData.type == ItemData.ItemTypes.TOWER)
+        {
+            placementMarker.isActive = true;
+            placementMarker.moveToPos(dropPos.position);
+        }
+        else{ placementMarker.isActive = false; }
     }
 
 
