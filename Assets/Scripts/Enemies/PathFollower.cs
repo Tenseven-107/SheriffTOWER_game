@@ -51,4 +51,14 @@ public class PathFollower : MonoBehaviour
 
         transform.position = currentDestination;
     }
+
+    public Path GetPath()
+    {
+        return path;
+    }
+
+    public float GetMoveDistance()
+    {
+        return moveDistance;
+    }
 }
