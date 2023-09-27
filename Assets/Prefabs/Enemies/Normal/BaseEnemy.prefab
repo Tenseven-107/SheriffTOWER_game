@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 622890580780241809}
   - component: {fileID: 5318672110887008126}
   - component: {fileID: 2364009331726662095}
+  - component: {fileID: 8839146670282493215}
   m_Layer: 7
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -162,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfde27ea93f935428140bd218cdd5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
 --- !u!114 &2364009331726662095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,7 +190,35 @@ MonoBehaviour:
   hitstopTime: 0
   screenshakeTime: 0
   screenshakeIntensity: 0
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8839146670282493215}
+        m_TargetAssemblyTypeName: GiveMoney, Assembly-CSharp
+        m_MethodName: AddMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   audio: {fileID: 0}
+--- !u!114 &8839146670282493215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032206485327828991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e122116f32f74e45915341e8c7f4085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 2
 --- !u!1 &8170930656305041740
 GameObject:
   m_ObjectHideFlags: 0

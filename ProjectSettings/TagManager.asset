@@ -8,6 +8,7 @@ TagManager:
   - TowerContainer
   - ItemContainer
   - Objective
+  - MoneyBag
   layers:
   - Default
   - TransparentFX

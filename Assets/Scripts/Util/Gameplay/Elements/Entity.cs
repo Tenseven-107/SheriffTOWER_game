@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Entity : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class Entity : MonoBehaviour
     [Range(0, 0.1f)] public float hitstopTime = 0;
     [Range(0, 1)] public float screenshakeTime = 0;
     [Range(0, 10)] public float screenshakeIntensity = 0;
+
+    [SerializeField] UnityEvent onDeath;
 
     public RandomAudio audio; // Hit audio
 
@@ -102,6 +105,8 @@ public class Entity : MonoBehaviour
     // Die
     public void Die()
     {
+        if (onDeath != null) onDeath.Invoke();
+
         if (deathEffect != null)
         {
             Transform parent = transform.parent;
