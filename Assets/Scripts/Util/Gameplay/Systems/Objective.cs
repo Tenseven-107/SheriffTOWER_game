@@ -10,6 +10,7 @@ public class Objective : MonoBehaviour
     [SerializeField] int maxHP = 100;
 
     [SerializeField] Slider slider;
+    [SerializeField] EnemySpawner spawner;
 
 
     private void Start()
@@ -25,7 +26,13 @@ public class Objective : MonoBehaviour
 
         if (currentHP <= 0)
         {
-            print("Dead");
+            GameOver();
         }
+    }
+
+
+    void GameOver()
+    {
+        spawner.RemoveEnemies(true);
     }
 }

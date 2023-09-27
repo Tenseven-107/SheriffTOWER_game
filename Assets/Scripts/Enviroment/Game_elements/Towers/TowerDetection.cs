@@ -7,6 +7,7 @@ using UnityEngine;
 public class TowerDetection : MonoBehaviour
 {
     [SerializeField] float areaSize = 2.5f;
+    [SerializeField] Vector2 areaOrigin = Vector2.zero;
 
     [SerializeField] int areaLayerSelf = 6;
     [SerializeField] int areaLayer = 8;
@@ -37,7 +38,7 @@ public class TowerDetection : MonoBehaviour
 
     void CheckArea()
     {
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, areaSize, areaLayer << (areaLayer / 2));
+        Collider2D[] hits = Physics2D.OverlapCircleAll(areaOrigin + (Vector2)transform.position, areaSize, areaLayer << (areaLayer / 2));
 
         if (hits.Length > 0 && lockedEnemy == null)
         {
@@ -86,6 +87,6 @@ public class TowerDetection : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (testing == true) Gizmos.DrawWireSphere(transform.position, areaSize);
+        if (testing == true) Gizmos.DrawWireSphere(areaOrigin + (Vector2)transform.position, areaSize);
     }
 }
