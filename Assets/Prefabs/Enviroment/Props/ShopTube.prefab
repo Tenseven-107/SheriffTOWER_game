@@ -314,8 +314,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 7272045489529651315}
-  item: {fileID: 7025520087328256445, guid: 4c9ad0e8c2c874d45ac551af07cb2a3d, type: 3}
-  cost: 1
+  item: {fileID: 7025520087328256445, guid: 8ebf52bf23308d94595867f82dffa1ef, type: 3}
+  cost: 25
+  disableOnPress: 0
 --- !u!1 &2124303214474094231
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,8 +735,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 7272045489529651315}
-  item: {fileID: 7025520087328256445, guid: 4c9ad0e8c2c874d45ac551af07cb2a3d, type: 3}
-  cost: 1
+  item: {fileID: 7025520087328256445, guid: cb14e3d94041c4e479494e5f1a902065, type: 3}
+  cost: 75
+  disableOnPress: 0
 --- !u!1 &6369284650554245390
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,7 +887,7 @@ GameObject:
   - component: {fileID: 6506217794578875400}
   - component: {fileID: 7272045489529651315}
   m_Layer: 0
-  m_Name: UpgradeTube
+  m_Name: ShopTube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1168,8 +1170,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 7272045489529651315}
-  item: {fileID: 7025520087328256445, guid: 4c9ad0e8c2c874d45ac551af07cb2a3d, type: 3}
-  cost: 1
+  item: {fileID: 7025520087328256445, guid: 9d618c73f96d4d94aad8ca72fcd86b62, type: 3}
+  cost: 50
+  disableOnPress: 0
 --- !u!1 &7324467314249514314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1319,7 +1322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shop: {fileID: 7272045489529651315}
   item: {fileID: 1872577239112258181, guid: 3d48262d1e3f72a43b56332558acd2df, type: 3}
-  cost: 1
+  cost: 15
+  disableOnPress: 1
 --- !u!1 &7884396042477395695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,8 +1472,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 7272045489529651315}
-  item: {fileID: 7025520087328256445, guid: 4c9ad0e8c2c874d45ac551af07cb2a3d, type: 3}
-  cost: 1
+  item: {fileID: 6379946666012471314, guid: b55a45c7aead8124f9ce3a2a3dbf579c, type: 3}
+  cost: 100
+  disableOnPress: 0
 --- !u!1 &7946073412358210990
 GameObject:
   m_ObjectHideFlags: 0

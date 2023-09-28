@@ -19,7 +19,7 @@ public class MoneyBag : MonoBehaviour
 
     public bool CheckIfCanRemove(int removedMoney)
     {
-        if ((currentMoney - removedMoney) > 0)
+        if ((currentMoney - removedMoney) >= 0)
         {
             return true;
         }
