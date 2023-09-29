@@ -1,27 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class MoneyUI : MonoBehaviour
+public class ShopMoney : MonoBehaviour
 {
+    bool active = false;
+
     [SerializeField] TextMeshProUGUI text;
     MoneyBag moneyBag;
 
 
     private void Start()
     {
-        moneyBag = GetComponent<MoneyBag>();
-        text.enabled = false;
+        GameObject bag = GameObject.FindWithTag("MoneyBag");
+        moneyBag = bag.GetComponent<MoneyBag>();
     }
 
-
-    public void UpdateUI()
+    void Update()
     {
-        text.text = moneyBag.currentMoney.ToString();
+        if (active == true)
+        {
+            string moneyText = "Money: " + moneyBag.currentMoney.ToString();
+            text.text = moneyText;
+        }
     }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,7 +32,7 @@ public class MoneyUI : MonoBehaviour
 
         if (colliderObject.tag == "Player")
         {
-            text.enabled = true;
+            active = true;
         }
     }
 
@@ -39,7 +42,7 @@ public class MoneyUI : MonoBehaviour
 
         if (colliderObject.tag == "Player")
         {
-            text.enabled = false;
+            active = false;
         }
     }
 }

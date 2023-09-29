@@ -5,7 +5,7 @@ using static UnityEditor.PlayerSettings;
 
 public class PositionToGridpos : MonoBehaviour
 {
-    [SerializeField] Vector2 gridSize = new Vector2(1.8f, 1.8f);
+    [SerializeField] Vector2 gridSize = new Vector2(0.9f, 0.9f);
 
     public Vector2 PositionToGrid(Vector2 normalPosition)
     {

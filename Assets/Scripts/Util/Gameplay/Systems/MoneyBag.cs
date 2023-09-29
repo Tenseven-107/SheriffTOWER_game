@@ -4,22 +4,46 @@ using UnityEngine;
 
 public class MoneyBag : MonoBehaviour
 {
+    MoneyUI moneyUI;
+
+    int CURRENTMONEY
+    {
+        set
+        {
+            currentMoney = value;
+
+            moneyUI.UpdateUI();
+        }
+
+        get
+        {
+            return currentMoney;
+        }
+    }
     public int currentMoney = 0;
+
+
+    private void Start()
+    {
+        moneyUI = GetComponent<MoneyUI>();
+        CURRENTMONEY = 0;
+    }
+
 
 
     public void AddMoney(int money)
     {
-        currentMoney += money;
+        CURRENTMONEY += money;
     }
 
     public void RemoveMoney(int money)
     {
-        currentMoney -= money;
+        CURRENTMONEY -= money;
     }
 
     public bool CheckIfCanRemove(int removedMoney)
     {
-        if ((currentMoney - removedMoney) >= 0)
+        if ((CURRENTMONEY - removedMoney) >= 0)
         {
             return true;
         }
