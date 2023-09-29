@@ -1,11 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] GameObject enemy; // change to enemy list later
-    [SerializeField] float spawnCooldown = 2.5f;
+    [SerializeField] List<EnemyWave> waves = new List<EnemyWave>();
+        
+    float currentCooldown = 1f;
+    public int currentWave = 0;
+    GameObject currentEnemy;
+
     bool active = true;
 
     [SerializeField] Path path;
@@ -14,6 +19,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
+        currentWave = 0;
+
         StartCoroutine(SpawnLoop());
     }
 
@@ -22,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (spawnEnemy != null)
         {
-            GameObject newEnemy = Instantiate(enemy, transform);
+            GameObject newEnemy = Instantiate(currentEnemy, transform);
             newEnemy.transform.position = path.GetFirst();
 
             PathFollower follower = newEnemy.GetComponent<PathFollower>();
@@ -35,8 +42,8 @@ public class EnemySpawner : MonoBehaviour
     {
         if (active == false) { yield break; }
 
-        yield return new WaitForSeconds(spawnCooldown);
-        if (active == true) SpawnEnemy(enemy);
+        yield return new WaitForSeconds(currentCooldown);
+        if (active == true) SpawnEnemy(currentEnemy);
         StartCoroutine(SpawnLoop());
     }
 
