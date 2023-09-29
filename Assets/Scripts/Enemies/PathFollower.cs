@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 public class PathFollower : MonoBehaviour
 {
     [SerializeField][Range(0.5f, 30)] float speed = 2;
-    float moveDistance = 0.5f;
-    Vector2 velocity = Vector2.zero;
+    float moveDistance = 0.001f;
     Vector2 currentDestination = Vector2.zero;
 
     Rigidbody2D rb;
@@ -30,12 +30,8 @@ public class PathFollower : MonoBehaviour
     {
         if (Vector2.Distance(rb.position, currentDestination) > moveDistance)
         {
-            Vector2 direction = currentDestination - rb.position;
-            Vector2 normalizedVector = Vector3.Normalize(direction);
-
-            velocity = normalizedVector * speed * Time.deltaTime;
-
-            rb.MovePosition(rb.position + velocity);
+            float step = speed * Time.deltaTime;
+            rb.position = Vector2.MoveTowards(rb.position, currentDestination, step);
         }
         else
         {
