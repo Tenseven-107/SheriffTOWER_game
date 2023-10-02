@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWave : MonoBehaviour
+[System.Serializable]
+public class EnemyWave
+
 {
     public float cooldown = 1;
-    List<GameObject> enemies = new List<GameObject>();
+    public List<GameObject> enemies = new List<GameObject>();
 }

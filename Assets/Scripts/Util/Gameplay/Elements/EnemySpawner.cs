@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -8,8 +9,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] List<EnemyWave> waves = new List<EnemyWave>();
         
     float currentCooldown = 1f;
-    public int currentWave = 0;
+
+    public int currentWaveCount = 0;
+    EnemyWave currentWave;
+
+    int currentEnemyCount = 0;
     GameObject currentEnemy;
+    public bool lastSpawned = false;
 
     bool active = true;
 
@@ -19,15 +25,25 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        currentWave = 0;
-
-        StartCoroutine(SpawnLoop());
+        SetNewWave();
+        StartCoroutine(WaveLoop());
     }
 
 
-    void SpawnEnemy(GameObject spawnEnemy)
+    void SpawnEnemy()
     {
-        if (spawnEnemy != null)
+        currentEnemy = currentWave.enemies[currentEnemyCount];
+
+        if (currentEnemyCount == currentWave.enemies.Count)
+        {
+            lastSpawned = true;
+        }
+        else
+        {
+            currentEnemyCount++;
+        }
+
+        if (currentEnemy != null && lastSpawned == false)
         {
             GameObject newEnemy = Instantiate(currentEnemy, transform);
             newEnemy.transform.position = path.GetFirst();
@@ -38,13 +54,23 @@ public class EnemySpawner : MonoBehaviour
     }
 
 
-    IEnumerator SpawnLoop() // Add advanced spawn logic later
+    IEnumerator WaveLoop() // Add advanced spawn logic later
     {
         if (active == false) { yield break; }
 
         yield return new WaitForSeconds(currentCooldown);
-        if (active == true) SpawnEnemy(currentEnemy);
-        StartCoroutine(SpawnLoop());
+
+        if (lastSpawned == true && (transform.childCount - 1) == 0)
+        {
+            active = false;
+
+            currentWaveCount++;
+            SetNewWave();
+        }
+
+        if (active == true && lastSpawned == false) SpawnEnemy();
+
+        StartCoroutine(WaveLoop());
     }
 
 
@@ -58,5 +84,15 @@ public class EnemySpawner : MonoBehaviour
         {
             Destroy(transform.GetChild(i).gameObject);
         }
+    }
+
+
+    void SetNewWave()
+    {
+        lastSpawned = false;
+        currentEnemyCount = 0;
+
+        currentWave = waves[currentWaveCount];
+        currentCooldown = currentWave.cooldown;
     }
 }
