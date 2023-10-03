@@ -9,20 +9,21 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] List<EnemyWave> waves = new List<EnemyWave>();
         
     float currentCooldown = 1f;
+    float waveCooldown = 15f;
 
     public int currentWaveCount = 0;
     EnemyWave currentWave;
 
-    int currentEnemyCount = 0;
+    public int currentEnemyCount = 0;
     GameObject currentEnemy;
     public bool lastSpawned = false;
 
-    bool active = true;
+    public bool active = true;
 
     [SerializeField] Path path;
 
 
-
+    // Setup
     private void Start()
     {
         SetNewWave();
@@ -30,50 +31,56 @@ public class EnemySpawner : MonoBehaviour
     }
 
 
+    // Spawn a single enemy
     void SpawnEnemy()
     {
-        currentEnemy = currentWave.enemies[currentEnemyCount];
-
-        if (currentEnemyCount == currentWave.enemies.Count)
+        if (currentEnemyCount != currentWave.enemies.Count)
         {
-            lastSpawned = true;
-        }
-        else
-        {
+            currentEnemy = currentWave.enemies[currentEnemyCount];
             currentEnemyCount++;
-        }
 
-        if (currentEnemy != null && lastSpawned == false)
-        {
-            GameObject newEnemy = Instantiate(currentEnemy, transform);
-            newEnemy.transform.position = path.GetFirst();
+            if (currentEnemy != null)
+            {
+                GameObject newEnemy = Instantiate(currentEnemy, transform);
+                newEnemy.transform.position = path.GetFirst();
 
-            PathFollower follower = newEnemy.GetComponent<PathFollower>();
-            follower.SetPath(path);
+                PathFollower follower = newEnemy.GetComponent<PathFollower>();
+                follower.SetPath(path);
+            }
+
+            if (currentEnemyCount == currentWave.enemies.Count) { lastSpawned = true; }
         }
     }
 
 
-    IEnumerator WaveLoop() // Add advanced spawn logic later
-    {
-        if (active == false) { yield break; }
 
+    // While a wave is active
+    IEnumerator WaveLoop()
+    {
         yield return new WaitForSeconds(currentCooldown);
 
-        if (lastSpawned == true && (transform.childCount - 1) == 0)
+        if (active == true)
         {
-            active = false;
+            if (lastSpawned == true && transform.childCount == 0)
+            {
+                active = false;
 
-            currentWaveCount++;
-            SetNewWave();
+                if ((currentWaveCount + 1) != waves.Count)
+                {
+                    currentWaveCount++;
+                    SetNewWave();
+                }
+            }
+            else SpawnEnemy();
         }
-
-        if (active == true && lastSpawned == false) SpawnEnemy();
+        else { yield break; }
 
         StartCoroutine(WaveLoop());
     }
 
 
+
+    // Remove enemies
     public void RemoveEnemies(bool setInactive)
     {
         if  (setInactive == true) { active = false; }
@@ -87,6 +94,8 @@ public class EnemySpawner : MonoBehaviour
     }
 
 
+
+    // STarting and setting waves
     void SetNewWave()
     {
         lastSpawned = false;
@@ -94,5 +103,22 @@ public class EnemySpawner : MonoBehaviour
 
         currentWave = waves[currentWaveCount];
         currentCooldown = currentWave.cooldown;
+
+        StartCoroutine(WaveCountdown());
+    }
+
+
+    IEnumerator WaveCountdown()
+    {
+        yield return new WaitForSeconds(waveCooldown);
+        StartWaveSpawner();
+        yield break;
+    }
+
+
+    public void StartWaveSpawner()
+    {
+        active = true;
+        StartCoroutine(WaveLoop());
     }
 }

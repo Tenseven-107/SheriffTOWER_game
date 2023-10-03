@@ -1544,7 +1544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shop: {fileID: 7272045489529651315}
   item: {fileID: 1872577239112258181, guid: 3d48262d1e3f72a43b56332558acd2df, type: 3}
-  cost: 15
+  cost: 30
   disableOnPress: 1
 --- !u!1 &7884396042477395695
 GameObject:
