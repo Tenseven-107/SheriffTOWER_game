@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TowerDetection : MonoBehaviour
 {
-    [SerializeField] float areaSize = 2.5f;
+    [SerializeField] public float areaSize = 2.5f;
     [SerializeField] Vector2 areaOrigin = Vector2.zero;
 
     [SerializeField] int areaLayerSelf = 6;

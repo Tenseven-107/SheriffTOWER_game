@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TowerRaycastDetect : MonoBehaviour
 {
-    [SerializeField] float range = 10;
+    [SerializeField] public float range = 10;
 
     [SerializeField] int areaLayerSelf = 6;
     [SerializeField] int areaLayer = 8;
