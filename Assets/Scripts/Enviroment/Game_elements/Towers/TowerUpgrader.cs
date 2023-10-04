@@ -1,29 +1,41 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class TowerUpgrader : MonoBehaviour
 {
     [SerializeField] List<TowerUpgradeConstruct> towerUpgrades = new List<TowerUpgradeConstruct>();
-    int nextUpgrade = 0;
+    public int nextUpgrade = 0;
 
     [SerializeField] MonoBehaviour towerMono;
     Type towerClass;
+
+    MoneyBag moneyBag;
 
 
 
     private void Start()
     {
         towerClass = towerMono.GetType();
+
+        GameObject bagObject = GameObject.FindWithTag("MoneyBag");
+        moneyBag = bagObject.GetComponent<MoneyBag>();
     }
 
 
 
     public void BuyUpgrade()
     {
-        Upgrade();
+        int cost = towerUpgrades[nextUpgrade].cost;
+
+        if (moneyBag.CheckIfCanRemove(cost) == true && nextUpgrade <= towerUpgrades.Count)
+        {
+            moneyBag.RemoveMoney(cost);
+            Upgrade();
+        }
     }
 
 
@@ -32,11 +44,17 @@ public class TowerUpgrader : MonoBehaviour
         TowerUpgradeConstruct upgrade = towerUpgrades[nextUpgrade];
         nextUpgrade++;
 
+        if (upgrade.newSprite != null)
+        {
+            SpriteRenderer sprite = GetComponentInChildren<SpriteRenderer>();
+            sprite.sprite = upgrade.newSprite;
+        }
+
         switch (towerClass)
         {
             case Type type when type == typeof(TowerMelee): // Melee
                 {
-                    TowerMeleeDamager towerMelee = GetComponent<TowerMeleeDamager>();
+                    TowerMeleeDamager towerMelee = GetComponentInChildren<TowerMeleeDamager>();
 
                     towerMelee.cooldown -= upgrade.cooldownUpgrade;
                     towerMelee.damage += upgrade.damageUpgrade;

@@ -11,6 +11,7 @@ public class TowerUpgradeConstruct
     [Header("Universal Upgrades")]
     public float rangeUpgrade = 1f;
     public float cooldownUpgrade = 0.1f;
+    public Sprite newSprite;
 
     [Header("Melee Upgrades")]
     public int damageUpgrade = 1;

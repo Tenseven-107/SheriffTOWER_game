@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shop: {fileID: 7272045489529651315}
-  item: {fileID: 6379946666012471314, guid: b55a45c7aead8124f9ce3a2a3dbf579c, type: 3}
+  item: {fileID: 7025520087328256445, guid: a0017d11ec237ed47a6b50a748e265e9, type: 3}
   cost: 100
   disableOnPress: 0
 --- !u!1 &7946073412358210990

@@ -439,6 +439,79 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &4834416309795794480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2288256644585061365}
+  - component: {fileID: 4304371889906866446}
+  - component: {fileID: 6448669458707561587}
+  m_Layer: 0
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2288256644585061365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834416309795794480}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 202624645713318824}
+  m_Father: {fileID: 7201941408974303359}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &4304371889906866446
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834416309795794480}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.17, y: 1.69}
+  m_EdgeRadius: 0
+--- !u!114 &6448669458707561587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834416309795794480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e5740b9cb4f034ea7ed465604a0298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UI: {fileID: 7579184048546179547}
 --- !u!1 &7148215244921759034
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +699,6 @@ GameObject:
   - component: {fileID: 7201941408974303358}
   - component: {fileID: 7201941408974303353}
   - component: {fileID: 1159679083177571317}
-  - component: {fileID: 9027417427485103106}
   m_Layer: 6
   m_Name: BaseTowerShooter
   m_TagString: Untagged
@@ -648,7 +720,7 @@ Transform:
   m_Children:
   - {fileID: 7201941408793454606}
   - {fileID: 8358251135150334166}
-  - {fileID: 202624645713318824}
+  - {fileID: 2288256644585061365}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -697,28 +769,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerUpgrades:
   - cost: 20
-    rangeUpgrade: 0.2
+    rangeUpgrade: 0.5
     cooldownUpgrade: 0.05
+    newSprite: {fileID: 0}
     damageUpgrade: 0
     newProjectile: {fileID: 0}
   - cost: 20
     rangeUpgrade: 0
     cooldownUpgrade: 0
+    newSprite: {fileID: 0}
     damageUpgrade: 1
     newProjectile: {fileID: 0}
   towerMono: {fileID: 7201941408974303353}
---- !u!114 &9027417427485103106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7201941408974303357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2e5740b9cb4f034ea7ed465604a0298, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7579184048546179547
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,12 +814,12 @@ RectTransform:
   m_Children:
   - {fileID: 3492251206871569279}
   - {fileID: 5048823482872603582}
-  m_Father: {fileID: 7201941408974303359}
-  m_RootOrder: 2
+  m_Father: {fileID: 2288256644585061365}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.02, y: 3.1}
+  m_AnchoredPosition: {x: -0.000025015324, y: 3.106205}
   m_SizeDelta: {x: 5.5471, y: 1.2675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3644677157024686376
