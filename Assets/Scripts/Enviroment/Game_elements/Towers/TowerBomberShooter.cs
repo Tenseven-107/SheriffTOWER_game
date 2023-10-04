@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class TowerBomberShooter : MonoBehaviour
 {
-    [SerializeField] float cooldown = 1f;
+    [SerializeField] public float cooldown = 1f;
     float last;
 
-    [SerializeField] GameObject explosion;
+    [SerializeField] public GameObject explosion;
 
 
     public void Bomb(Vector2 location)

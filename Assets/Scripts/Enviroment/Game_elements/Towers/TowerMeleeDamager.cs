@@ -5,13 +5,13 @@ using UnityEngine;
 
 public class TowerMeleeDamager : MonoBehaviour
 {
-    [SerializeField] int damage = 1; // Damage value
+    [SerializeField] public int damage = 1; // Damage value
     [SerializeField] int team = 0; // This damage dealers team
 
-    [SerializeField] float cooldown = 1.5f;
+    [SerializeField] public float cooldown = 1.5f;
     float last;
 
-    [SerializeField] float areaSize = 2.5f;
+    [SerializeField] public float areaSize = 2.5f;
 
     [SerializeField] int areaLayerSelf = 6;
     [SerializeField] int areaLayer = 8;
