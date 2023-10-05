@@ -15,6 +15,8 @@ public class TowerUpgrader : MonoBehaviour
     [SerializeField] MonoBehaviour towerMono;
     Type towerClass;
 
+    SpriteRenderer sprite;
+
     MoneyBag moneyBag;
 
 
@@ -27,6 +29,8 @@ public class TowerUpgrader : MonoBehaviour
 
         GameObject bagObject = GameObject.FindWithTag("MoneyBag");
         moneyBag = bagObject.GetComponent<MoneyBag>();
+
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
 
@@ -58,7 +62,6 @@ public class TowerUpgrader : MonoBehaviour
 
         if (upgrade.newSprite != null)
         {
-            SpriteRenderer sprite = GetComponentInChildren<SpriteRenderer>();
             sprite.sprite = upgrade.newSprite;
         }
 
@@ -66,10 +69,14 @@ public class TowerUpgrader : MonoBehaviour
         {
             case Type type when type == typeof(TowerMelee): // Melee
                 {
+                    TowerDetection towerDetect = GetComponentInChildren<TowerDetection>();
                     TowerMeleeDamager towerMelee = GetComponentInChildren<TowerMeleeDamager>();
 
                     towerMelee.cooldown -= upgrade.cooldownUpgrade;
                     towerMelee.damage += upgrade.damageUpgrade;
+
+                    towerDetect.areaSize += upgrade.rangeUpgrade;
+                    towerMelee.areaSize += upgrade.rangeUpgrade;
 
                     break;
                 }

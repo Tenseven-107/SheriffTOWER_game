@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5318672110887008126}
   - component: {fileID: 2364009331726662095}
   - component: {fileID: 8839146670282493215}
+  - component: {fileID: 8237136416606888000}
   m_Layer: 7
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -190,6 +191,21 @@ MonoBehaviour:
   hitstopTime: 0
   screenshakeTime: 0
   screenshakeIntensity: 0
+  onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2706231886222971174}
+        m_TargetAssemblyTypeName: TweenScaler, Assembly-CSharp
+        m_MethodName: StartTween
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDeath:
     m_PersistentCalls:
       m_Calls:
@@ -219,6 +235,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 2
+  destroy: 0
+--- !u!114 &8237136416606888000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032206485327828991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScale: {x: 0, y: 0}
+  endScale: {x: 1, y: 1}
+  duration: 1
+  ease: 31
+  looping: 0
+  atStart: 1
 --- !u!1 &8170930656305041740
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6521201045162655305}
   - component: {fileID: 7759770546000945465}
+  - component: {fileID: 2706231886222971174}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -303,3 +339,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2706231886222971174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170930656305041740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScale: {x: 0.85, y: 1.2}
+  endScale: {x: 1, y: 1}
+  duration: 0.2
+  ease: 31
+  looping: 0
+  atStart: 0

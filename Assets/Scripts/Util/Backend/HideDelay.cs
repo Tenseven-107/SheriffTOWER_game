@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class RemoveDelay : MonoBehaviour
+public class HideDelay : MonoBehaviour
 {
     [SerializeField] bool atStart = true;
 
     [SerializeField] float delay = 1f;
     WaitForSeconds timer;
+
+    [SerializeField] SpriteRenderer sprite;
 
 
     private void Start()
@@ -20,18 +22,19 @@ public class RemoveDelay : MonoBehaviour
 
     public void StartDelay()
     {
-        StartCoroutine(Remove());
+        sprite.enabled = true;
+        StartCoroutine(Hide());
     }
 
-    IEnumerator Remove()
+    IEnumerator Hide()
     {
         yield return timer;
-        Destroy(gameObject);
+        sprite.enabled = false;
         yield break;
     }
 
     private void OnDestroy()
     {
-        StopCoroutine(Remove());
+        StopCoroutine(Hide());
     }
 }

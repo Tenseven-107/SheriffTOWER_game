@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TowerMeleeDamager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class TowerMeleeDamager : MonoBehaviour
 
     [SerializeField] bool testing;
 
+    [SerializeField] UnityEvent meleeEvent;
+
     public GameObject lockedEnemy;
 
 
@@ -33,6 +36,8 @@ public class TowerMeleeDamager : MonoBehaviour
             return;
         }
         last = Time.time;
+
+        if (meleeEvent != null) { meleeEvent.Invoke(); }
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, areaSize, areaLayer << (areaLayer / 2));
 

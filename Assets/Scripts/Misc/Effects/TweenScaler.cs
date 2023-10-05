@@ -18,8 +18,6 @@ public class TweenScaler : MonoBehaviour
 
     private void Start()
     {
-        transform.localScale = startScale;
-
         if (atStart == true) { StartTween(); }
     }
 
@@ -29,17 +27,18 @@ public class TweenScaler : MonoBehaviour
         
         if (looping == true)
         {
-            transform.DOScale(endScale, duration).SetEase(ease).SetLoops(-1, LoopType.Yoyo);
+            transform.DOScale(endScale, duration).SetEase(ease).SetLoops(-1, LoopType.Yoyo).SetId(gameObject);
         }
         else
         {
-            transform.DOScale(endScale, duration).SetEase(ease);
+            transform.localScale = startScale;
+            transform.DOScale(endScale, duration).SetEase(ease).SetId(gameObject);
         }
     }
 
 
     private void OnDestroy()
     {
-        DOTween.KillAll(transform);
+        DOTween.Kill(gameObject);
     }
 }

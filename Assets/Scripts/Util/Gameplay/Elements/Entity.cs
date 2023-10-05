@@ -30,6 +30,7 @@ public class Entity : MonoBehaviour
     [Range(0, 1)] public float screenshakeTime = 0;
     [Range(0, 10)] public float screenshakeIntensity = 0;
 
+    [SerializeField] UnityEvent onHit;
     [SerializeField] UnityEvent onDeath;
 
     public RandomAudio audio; // Hit audio
@@ -54,6 +55,9 @@ public class Entity : MonoBehaviour
             last = Time.time;
 
             if (!godmode) hp -= damage;
+            if (onHit != null) onHit.Invoke();
+
+            // Juice -
             StartCoroutine(Flash());
 
             if (juice)
@@ -70,6 +74,7 @@ public class Entity : MonoBehaviour
                 anims.ResetTrigger("Idle");
                 anims.SetTrigger("Hit");
             }
+            // -
 
             if (hp <= 0)
             {
