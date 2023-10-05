@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using System.Text.RegularExpressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TowerUpgrader : MonoBehaviour
 {
     [SerializeField] List<TowerUpgradeConstruct> towerUpgrades = new List<TowerUpgradeConstruct>();
     public int nextUpgrade = 0;
+    public bool canUpgrade = true;
 
     [SerializeField] MonoBehaviour towerMono;
     Type towerClass;
@@ -21,6 +23,8 @@ public class TowerUpgrader : MonoBehaviour
     {
         towerClass = towerMono.GetType();
 
+        canUpgrade = true;
+
         GameObject bagObject = GameObject.FindWithTag("MoneyBag");
         moneyBag = bagObject.GetComponent<MoneyBag>();
     }
@@ -29,15 +33,23 @@ public class TowerUpgrader : MonoBehaviour
 
     public void BuyUpgrade()
     {
-        int cost = towerUpgrades[nextUpgrade].cost;
-
-        if (moneyBag.CheckIfCanRemove(cost) == true && nextUpgrade <= towerUpgrades.Count)
+        if (canUpgrade == true)
         {
-            moneyBag.RemoveMoney(cost);
-            Upgrade();
+            if (nextUpgrade >= towerUpgrades.Count)
+            {
+                canUpgrade = false;
+                return;
+            }
+
+            int cost = towerUpgrades[nextUpgrade].cost;
+
+            if (moneyBag.CheckIfCanRemove(cost) == true)
+            {
+                moneyBag.RemoveMoney(cost);
+                Upgrade();
+            }
         }
     }
-
 
     void Upgrade()
     {

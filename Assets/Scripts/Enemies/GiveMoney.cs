@@ -5,6 +5,7 @@ using UnityEngine;
 public class GiveMoney : MonoBehaviour
 {
     [SerializeField] int money = 2;
+    [SerializeField] bool destroy = false;
 
     MoneyBag moneyBag;
 
@@ -17,5 +18,10 @@ public class GiveMoney : MonoBehaviour
     public void AddMoney()
     {
         moneyBag.AddMoney(money);
+
+        if (destroy == true)
+        {
+            Destroy(gameObject);
+        }
     }
 }

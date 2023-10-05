@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class TowerUI : MonoBehaviour
 {
+    [SerializeField] TowerUpgrader upgrader;
+
     [SerializeField] GameObject UI;
+    [SerializeField] GameObject UpgradeButton;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +27,14 @@ public class TowerUI : MonoBehaviour
         if (colliderObject.tag == "Player") // Player.upgradekit == true
         {
             UI.SetActive(false);
+        }
+    }
+
+    public void UpdateUI()
+    {
+        if (upgrader.canUpgrade == false)
+        {
+            UpgradeButton.SetActive(false);
         }
     }
 }
