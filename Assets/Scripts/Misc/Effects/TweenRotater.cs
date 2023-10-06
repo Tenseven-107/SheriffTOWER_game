@@ -11,6 +11,7 @@ public class TweenRotater : MonoBehaviour
 
     [SerializeField] float duration = 1f;
     [SerializeField] Ease ease = Ease.Linear;
+    [SerializeField] LoopType loop = LoopType.Yoyo;
 
     [SerializeField] bool looping = false;
     [SerializeField] bool atStart = true;
@@ -28,7 +29,7 @@ public class TweenRotater : MonoBehaviour
 
         if (looping == true)
         {
-            transform.DOLocalRotate(new Vector3(0, 0, finalRotation), duration, RotateMode.FastBeyond360).SetRelative(true).SetEase(ease).SetLoops(-1, LoopType.Yoyo).SetId(gameObject);
+            transform.DOLocalRotate(new Vector3(0, 0, finalRotation), duration, RotateMode.FastBeyond360).SetRelative(true).SetEase(ease).SetLoops(-1, loop).SetId(gameObject);
         }
         else
         {

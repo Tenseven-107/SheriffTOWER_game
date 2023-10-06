@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8839146670282493215}
   - component: {fileID: 8237136416606888000}
   m_Layer: 7
-  m_Name: BaseEnemy
+  m_Name: Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1}
+  m_Offset: {x: 0, y: 0.73}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -137,7 +137,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.61, y: 1.4}
+  m_Size: {x: 1.42, y: 1.4}
   m_EdgeRadius: 0
 --- !u!114 &622890580780241809
 MonoBehaviour:
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9b4ad841e60cf847ac1ecac046492d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 7
 --- !u!114 &5318672110887008126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfde27ea93f935428140bd218cdd5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 3
 --- !u!114 &2364009331726662095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25300394c1d189a438b91baf829b7084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 3
-  maxHP: 3
+  hp: 5
+  maxHP: 5
   team: 1
   godmode: 0
   invincible: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e122116f32f74e45915341e8c7f4085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 2
+  money: 12
   destroy: 0
 --- !u!114 &8237136416606888000
 MonoBehaviour:
@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 6521201045162655305}
   - component: {fileID: 7759770546000945465}
   - component: {fileID: 2706231886222971174}
+  - component: {fileID: 1049453888251503521}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -280,7 +281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8170930656305041740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.01202, z: 0}
+  m_LocalPosition: {x: 0, y: 0.74649, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,7 +329,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -685882018, guid: 439383417991ff54fb3609909fc78add, type: 3}
+  m_Sprite: {fileID: 1398754845, guid: 439383417991ff54fb3609909fc78add, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -357,3 +358,22 @@ MonoBehaviour:
   ease: 31
   looping: 0
   atStart: 0
+--- !u!114 &1049453888251503521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170930656305041740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764cff531405a734787da109d84b559e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialRotation: 0
+  finalRotation: -360
+  duration: 0.5
+  ease: 1
+  loop: 0
+  looping: 1
+  atStart: 1

@@ -194,25 +194,25 @@ MonoBehaviour:
     newSprite: {fileID: 0}
     damageUpgrade: 1
     newProjectile: {fileID: 0}
-  - cost: 30
+  - cost: 50
     rangeUpgrade: 0.5
     cooldownUpgrade: 0.1
     newSprite: {fileID: 0}
     damageUpgrade: 1
     newProjectile: {fileID: 0}
-  - cost: 40
+  - cost: 100
     rangeUpgrade: 0.5
     cooldownUpgrade: 0.05
     newSprite: {fileID: -1247585358, guid: d4dd2c8cd2e380341bbd6c3320fc16ae, type: 3}
     damageUpgrade: 1
     newProjectile: {fileID: 334692974232083145, guid: 904d15959f122ca438e7156645230d18, type: 3}
-  - cost: 50
+  - cost: 150
     rangeUpgrade: 1
     cooldownUpgrade: 0.05
     newSprite: {fileID: 0}
     damageUpgrade: 1
     newProjectile: {fileID: 0}
-  - cost: 50
+  - cost: 200
     rangeUpgrade: 1
     cooldownUpgrade: 0.05
     newSprite: {fileID: -1928904622, guid: d4dd2c8cd2e380341bbd6c3320fc16ae, type: 3}
