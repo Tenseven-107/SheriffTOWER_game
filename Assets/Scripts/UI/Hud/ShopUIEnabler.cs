@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class ShopUIEnabler : MonoBehaviour
 {
+    [Header("UI")]
     [SerializeField] GameObject UI;
+
+    [Header("FX")]
+    [SerializeField] TweenMover UIMover;
+    [SerializeField] TweenScaler UIScaler;
 
 
     private void Start()
@@ -19,6 +24,9 @@ public class ShopUIEnabler : MonoBehaviour
         if (colliderObject.tag == "Player")
         {
             UI.SetActive(true);
+
+            UIMover.StartTween();
+            UIScaler.StartTween();
         }
     }
 
