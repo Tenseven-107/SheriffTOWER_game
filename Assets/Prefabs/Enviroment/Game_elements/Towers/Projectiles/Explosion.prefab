@@ -134,7 +134,7 @@ MonoBehaviour:
   startScale: {x: 1.25, y: 1.25}
   endScale: {x: 0, y: 0}
   duration: 0.5
-  ease: 2
+  ease: 25
   looping: 0
   atStart: 1
 --- !u!114 &2193468901332235338
@@ -149,4 +149,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22657396012988f4696b88991d3f30d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atStart: 1
   delay: 0.55

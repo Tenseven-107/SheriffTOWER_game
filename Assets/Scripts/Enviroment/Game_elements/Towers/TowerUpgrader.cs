@@ -39,12 +39,6 @@ public class TowerUpgrader : MonoBehaviour
     {
         if (canUpgrade == true)
         {
-            if (nextUpgrade >= towerUpgrades.Count)
-            {
-                canUpgrade = false;
-                return;
-            }
-
             int cost = towerUpgrades[nextUpgrade].cost;
 
             if (moneyBag.CheckIfCanRemove(cost) == true)
@@ -59,6 +53,11 @@ public class TowerUpgrader : MonoBehaviour
     {
         TowerUpgradeConstruct upgrade = towerUpgrades[nextUpgrade];
         nextUpgrade++;
+
+        if (nextUpgrade >= towerUpgrades.Count)
+        {
+            canUpgrade = false;
+        }
 
         if (upgrade.newSprite != null)
         {
@@ -129,5 +128,12 @@ public class TowerUpgrader : MonoBehaviour
                     break;
                 }
         }
+    }
+
+
+    public int GetCost()
+    {
+        int cost = towerUpgrades[nextUpgrade].cost;
+        return cost;
     }
 }

@@ -6,20 +6,30 @@ using UnityEngine;
 
 public class MoneyUI : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI text;
     MoneyBag moneyBag;
+
+    [Header("UI")]
+    [SerializeField] Canvas canvas;
+    [SerializeField] TextMeshProUGUI text;
+
+    [Header("FX")]
+    [SerializeField] TweenScaler backgroundScaler;
+    [SerializeField] TweenMover backgroundMover;
+    [SerializeField] TweenScaler bagScaler;
 
 
     private void Start()
     {
         moneyBag = GetComponent<MoneyBag>();
-        text.enabled = false;
+        canvas.enabled = false;
     }
 
 
     public void UpdateUI()
     {
         text.text = moneyBag.currentMoney.ToString();
+
+        bagScaler.StartTween();
     }
 
 
@@ -29,7 +39,10 @@ public class MoneyUI : MonoBehaviour
 
         if (colliderObject.tag == "Player")
         {
-            text.enabled = true;
+            canvas.enabled = true;
+
+            backgroundScaler.StartTween();
+            backgroundMover.StartTween();
         }
     }
 
@@ -39,7 +52,7 @@ public class MoneyUI : MonoBehaviour
 
         if (colliderObject.tag == "Player")
         {
-            text.enabled = false;
+            canvas.enabled = false;
         }
     }
 }

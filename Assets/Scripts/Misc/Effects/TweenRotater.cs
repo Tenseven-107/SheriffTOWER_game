@@ -12,21 +12,28 @@ public class TweenRotater : MonoBehaviour
     [SerializeField] float duration = 1f;
     [SerializeField] Ease ease = Ease.Linear;
 
-    [SerializeField] bool hideAtEnd = true;
+    [SerializeField] bool looping = false;
     [SerializeField] bool atStart = true;
 
 
     private void Start()
     {
-        transform.rotation = Quaternion.Euler(0,0,initialRotation);
-
         if (atStart == true) { StartTween(); }
     }
 
 
     public void StartTween()
     {
-        transform.DOLocalRotate(new Vector3(0, 0, finalRotation), duration, RotateMode.FastBeyond360).SetRelative(true).SetEase(ease).SetId(gameObject);
+        transform.rotation = Quaternion.Euler(0, 0, initialRotation);
+
+        if (looping == true)
+        {
+            transform.DOLocalRotate(new Vector3(0, 0, finalRotation), duration, RotateMode.FastBeyond360).SetRelative(true).SetEase(ease).SetLoops(-1, LoopType.Yoyo).SetId(gameObject);
+        }
+        else
+        {
+            transform.DOLocalRotate(new Vector3(0, 0, finalRotation), duration, RotateMode.FastBeyond360).SetRelative(true).SetEase(ease).SetId(gameObject);
+        }
     }
 
 

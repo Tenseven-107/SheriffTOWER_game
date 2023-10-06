@@ -4,10 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TweenScaler : MonoBehaviour
+public class TweenMover : MonoBehaviour
 {
-    [SerializeField] Vector2 startScale = Vector2.one;
-    [SerializeField] Vector2 endScale = Vector2.zero;
+    [SerializeField] Vector2 startPosition = Vector2.zero;
+    [SerializeField] Vector2 endPosition = Vector2.zero;
 
     [SerializeField] float duration = 1f;
     [SerializeField] Ease ease = Ease.Linear;
@@ -24,15 +24,15 @@ public class TweenScaler : MonoBehaviour
 
     public void StartTween()
     {
-        transform.localScale = startScale;
+        transform.localPosition = startPosition;
 
         if (looping == true)
         {
-            transform.DOScale(endScale, duration).SetEase(ease).SetLoops(-1, LoopType.Yoyo).SetId(gameObject);
+            transform.DOLocalMove(endPosition, duration).SetEase(ease).SetLoops(-1, LoopType.Yoyo).SetId(gameObject);
         }
         else
         {
-            transform.DOScale(endScale, duration).SetEase(ease).SetId(gameObject);
+            transform.DOLocalMove(endPosition, duration).SetEase(ease).SetId(gameObject);
         }
     }
 
