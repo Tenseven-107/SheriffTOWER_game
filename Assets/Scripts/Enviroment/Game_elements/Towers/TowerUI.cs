@@ -31,12 +31,16 @@ public class TowerUI : MonoBehaviour
     {
         GameObject colliderObject = collision.gameObject;
 
-        if (colliderObject.tag == "Player") // Player.upgradekit == true
+        if (colliderObject.tag == "Player")
         {
-            UI.SetActive(true);
+            PlayerPocket playerPocket = colliderObject.GetComponent<PlayerPocket>();
+            if (playerPocket.itemCanUpgrade == true)
+            {
+                UI.SetActive(true);
 
-            anims.Play();
-            popupTween.StartTween();
+                anims.Play();
+                popupTween.StartTween();
+            }
         }
     }
 
@@ -44,7 +48,7 @@ public class TowerUI : MonoBehaviour
     {
         GameObject colliderObject = collision.gameObject;
 
-        if (colliderObject.tag == "Player") // Player.upgradekit == true
+        if (colliderObject.tag == "Player")
         {
             UI.SetActive(false);
         }

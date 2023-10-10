@@ -7,6 +7,8 @@ public class PlayerPocket : MonoBehaviour
     [SerializeField] public GameObject heldItem;
     ItemData itemData;
 
+    [SerializeField] public bool itemCanUpgrade = false;
+
     [SerializeField] public GameObject weapon;
     [SerializeField] Transform weaponSlot;
 
@@ -60,6 +62,8 @@ public class PlayerPocket : MonoBehaviour
             itemSprite.sprite = itemData.itemSprite;
             player.equip = PlayerMovement.EquipState.ITEM;
         }
+
+        if (itemData.upgrader == true) { itemCanUpgrade = true; }
     }
 
 
@@ -76,6 +80,7 @@ public class PlayerPocket : MonoBehaviour
             Destroy(weapon);
         }
 
+        itemCanUpgrade = false;
         weapon = null;
         heldItem = null;
         itemData = null;
