@@ -362,6 +362,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Enemies_10
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 807
+        width: 264
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d27107796711c45a58251c68230c8d
+      internalID: 1714580797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemies_11
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 498
+        width: 583
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a478267dcdbd27d49b355a2545a0d359
+      internalID: -2091417881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemies_12
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 99
+        width: 564
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce19066c382b7ab4ab455b1359418ce0
+      internalID: -603992672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -375,11 +438,14 @@ TextureImporter:
     nameFileIdTable:
       Enemies_2: 733700202
       Enemies_3: -1391172228
+      Enemies_10: 1714580797
       Enemies_4: -436267351
       Enemies_1: -685882018
       Enemies_0: -361831775
       Enemies_5: -1251253507
+      Enemies_12: -603992672
       Enemies_9: 490880536
+      Enemies_11: -2091417881
       Enemies_6: 1790851492
       Enemies_7: -1140150401
       Enemies_8: 1398754845

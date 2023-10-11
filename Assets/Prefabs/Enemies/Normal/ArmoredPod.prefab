@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e122116f32f74e45915341e8c7f4085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 10
+  money: 5
   destroy: 0
 --- !u!114 &8237136416606888000
 MonoBehaviour:
