@@ -238,31 +238,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerUpgrades:
-  - cost: 20
+  - cost: 30
     rangeUpgrade: 0.5
     cooldownUpgrade: 0.05
     newSprite: {fileID: 0}
     damageUpgrade: 0
     newProjectile: {fileID: 0}
-  - cost: 30
+  - cost: 40
     rangeUpgrade: 0.25
     cooldownUpgrade: 0.25
     newSprite: {fileID: 0}
     damageUpgrade: 1
     newProjectile: {fileID: 0}
-  - cost: 50
+  - cost: 75
     rangeUpgrade: 0.25
     cooldownUpgrade: 0.3
     newSprite: {fileID: -1027803024, guid: d4dd2c8cd2e380341bbd6c3320fc16ae, type: 3}
     damageUpgrade: 1
     newProjectile: {fileID: 0}
-  - cost: 75
+  - cost: 150
     rangeUpgrade: 0.1
     cooldownUpgrade: 0.1
     newSprite: {fileID: 0}
     damageUpgrade: 1
     newProjectile: {fileID: 334692974232083145, guid: 04321b6057b75d3429502ffd8cbd5f2a, type: 3}
-  - cost: 125
+  - cost: 275
     rangeUpgrade: 0.5
     cooldownUpgrade: 0.5
     newSprite: {fileID: 468329893, guid: d4dd2c8cd2e380341bbd6c3320fc16ae, type: 3}

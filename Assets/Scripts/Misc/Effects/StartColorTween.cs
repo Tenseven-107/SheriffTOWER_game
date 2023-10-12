@@ -8,6 +8,7 @@ public class StartColorTween : MonoBehaviour
     [SerializeField] float time = 0.1f;
     SpriteRenderer sprite;
 
+
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();

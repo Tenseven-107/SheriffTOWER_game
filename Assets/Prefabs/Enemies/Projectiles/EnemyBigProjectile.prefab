@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12.5
-  timeAlive: 0.75
+  timeAlive: 1.25
   bulletLayer: 1
 --- !u!114 &91305537264475874
 MonoBehaviour:
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startScale: {x: 1, y: 1}
   endScale: {x: 0, y: 0}
-  duration: 0.75
+  duration: 1.25
   ease: 31
   looping: 0
   atStart: 1
