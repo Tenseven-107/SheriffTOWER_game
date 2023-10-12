@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Objective : MonoBehaviour
@@ -11,6 +12,8 @@ public class Objective : MonoBehaviour
 
     [SerializeField] Slider slider;
     [SerializeField] EnemySpawner spawner;
+
+    [SerializeField] UnityEvent atDamage;
 
 
     private void Start()
@@ -23,6 +26,8 @@ public class Objective : MonoBehaviour
     {
         currentHP -= damage;
         slider.value = -currentHP;
+
+        atDamage.Invoke();
 
         if (currentHP <= 0)
         {

@@ -196,6 +196,7 @@ GameObject:
   - component: {fileID: 824659102496426876}
   - component: {fileID: 2074329951317528743}
   - component: {fileID: 8232350798978169654}
+  - component: {fileID: 4345452152405874643}
   m_Layer: 0
   m_Name: Objective
   m_TagString: Objective
@@ -287,6 +288,37 @@ MonoBehaviour:
   currentHP: 0
   maxHP: 100
   slider: {fileID: 2838918104852744733}
+  spawner: {fileID: 0}
+  atDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4345452152405874643}
+        m_TargetAssemblyTypeName: CamJuiceEmitter, Assembly-CSharp
+        m_MethodName: Emit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4345452152405874643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6278188828977442681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2281720fbfee8c446b5f713f47da3dc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitstopTime: 0.05
+  screenshakeTime: 0.2
+  screenshakeIntensity: 0.5
 --- !u!1 &6720654902353405769
 GameObject:
   m_ObjectHideFlags: 0
