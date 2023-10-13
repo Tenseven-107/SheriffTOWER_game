@@ -6,6 +6,10 @@ using UnityEngine;
 public class StartColorTween : MonoBehaviour
 {
     [SerializeField] float time = 0.1f;
+    [SerializeField] Color startColor = Color.clear;
+    [SerializeField] Color endColor = Color.white;
+    [SerializeField] bool atStart = true;
+
     SpriteRenderer sprite;
 
 
@@ -13,7 +17,12 @@ public class StartColorTween : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
 
-        sprite.color = new Color(1,1,1, 0);
-        DOTweenModuleSprite.DOColor(sprite, Color.white, time);
+        sprite.color = startColor;
+        if (atStart == true) { StartTween(); }
+    }
+
+    public void StartTween()
+    {
+        DOTweenModuleSprite.DOColor(sprite, endColor, time);
     }
 }

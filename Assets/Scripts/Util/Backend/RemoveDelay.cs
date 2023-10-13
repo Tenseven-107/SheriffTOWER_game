@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RemoveDelay : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class RemoveDelay : MonoBehaviour
 
     [SerializeField] float delay = 1f;
     WaitForSeconds timer;
+
+    [SerializeField] UnityEvent afterDelayEvent;
 
 
     private void Start()
@@ -26,7 +29,10 @@ public class RemoveDelay : MonoBehaviour
     IEnumerator Remove()
     {
         yield return timer;
+
+        afterDelayEvent.Invoke();
         Destroy(gameObject);
+
         yield break;
     }
 
