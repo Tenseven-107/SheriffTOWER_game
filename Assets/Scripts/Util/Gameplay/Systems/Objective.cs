@@ -37,6 +37,8 @@ public class Objective : MonoBehaviour
         }
         
         atDamage.Invoke();
+
+        anim.Stop();
         anim.Play();
 
         if (currentHP <= 0)
