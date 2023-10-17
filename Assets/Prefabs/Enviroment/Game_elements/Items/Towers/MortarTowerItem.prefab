@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7025520087328256384}
   - component: {fileID: 7025520087328256387}
   - component: {fileID: 7025520087328256386}
+  - component: {fileID: -7554911741085124033}
   m_Layer: 0
   m_Name: MortarTowerItem
   m_TagString: Untagged
@@ -141,4 +142,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 0}
   type: 2
+  upgrader: 0
   weapon: {fileID: 0}
+--- !u!114 &-7554911741085124033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7025520087328256445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScale: {x: 0, y: 0}
+  endScale: {x: 1, y: 1}
+  duration: 0.25
+  ease: 31
+  looping: 0
+  atStart: 1

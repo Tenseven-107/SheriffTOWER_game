@@ -415,7 +415,8 @@ MonoBehaviour:
   finalRotation: 360
   duration: 0.2
   ease: 1
-  hideAtEnd: 1
+  loop: 1
+  looping: 0
   atStart: 0
 --- !u!114 &7866279660317829729
 MonoBehaviour:
@@ -457,6 +458,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6379946666012471312}
     m_Modifications:
+    - target: {fileID: 1676498799981400710, guid: 19cb4d13557e3eb45903ec02e6389a93, type: 3}
+      propertyPath: headTransform
+      value: 
+      objectReference: {fileID: 6379946666012471312}
     - target: {fileID: 1822978002043044041, guid: 19cb4d13557e3eb45903ec02e6389a93, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -509,6 +514,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6898341691900313606, guid: 19cb4d13557e3eb45903ec02e6389a93, type: 3}
+      propertyPath: headTransform
+      value: 
+      objectReference: {fileID: 6379946666012471312}
     - target: {fileID: 7757302271248859841, guid: 19cb4d13557e3eb45903ec02e6389a93, type: 3}
       propertyPath: upgrader
       value: 

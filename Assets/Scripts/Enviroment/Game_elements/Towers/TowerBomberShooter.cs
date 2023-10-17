@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TowerBomberShooter : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class TowerBomberShooter : MonoBehaviour
     float last;
 
     [SerializeField] public GameObject explosion;
+
+    [SerializeField] UnityEvent atFire; // Invoked when firing
 
 
     public void Bomb(Vector2 location)
@@ -20,5 +23,6 @@ public class TowerBomberShooter : MonoBehaviour
         last = Time.time;
 
         Instantiate(explosion, location, Quaternion.Euler(Vector3.zero), transform);
+        atFire.Invoke();
     }
 }
