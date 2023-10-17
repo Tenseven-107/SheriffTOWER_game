@@ -49,6 +49,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
+        rb.velocity = Vector2.zero;
+        rb.angularVelocity = 0;
+
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 

@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da82be7dc605e9478c2fe3d66ba36ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tweenSize: 1.5
 --- !u!114 &1586189231769736265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +262,7 @@ MonoBehaviour:
   fireTrans: {fileID: 746828870252218758}
   bullet: {fileID: 334692974232083145, guid: 04aba9b2edb30e74cbc191c9e662a880, type: 3}
   juice: 1
-  screenshakeTime: 0.2
+  screenshakeTime: 0.05
   screenshakeIntensity: 0.02
   audio: {fileID: 0}
   anims: {fileID: 5117795161072706517}
