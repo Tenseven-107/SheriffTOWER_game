@@ -18,6 +18,9 @@ public class PlayerPocket : MonoBehaviour
     [SerializeField] Transform dropPos;
     PlacementMarker placementMarker;
 
+    float bufferTime = 1f;
+    bool canDrop = false;
+
 
     private void Start()
     {
@@ -28,7 +31,7 @@ public class PlayerPocket : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && heldItem != null)
+        if (Input.GetKeyDown(KeyCode.E) && heldItem != null && canDrop == true)
         {
             DropItem();
         }
@@ -49,6 +52,9 @@ public class PlayerPocket : MonoBehaviour
             DropItem();
         }
 
+        canDrop = false;
+        StartCoroutine(PickupBuffer());
+
         itemData = newItem.GetComponent<ItemData>();
         heldItem = newItem;
         
@@ -64,6 +70,13 @@ public class PlayerPocket : MonoBehaviour
         }
 
         if (itemData.upgrader == true) { itemCanUpgrade = true; }
+    }
+
+    IEnumerator PickupBuffer()
+    {
+        yield return new WaitForSeconds(bufferTime);
+        canDrop = true;
+        yield break;
     }
 
 

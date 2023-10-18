@@ -524,6 +524,7 @@ MonoBehaviour:
   dashSpeed: 25.5
   torsoObject: {fileID: 7228910639648334720}
   feetObject: {fileID: 7228910640314255355}
+  hitbox: {fileID: 8236865521896705021}
   equip: 0
 --- !u!114 &5209962779592468117
 MonoBehaviour:

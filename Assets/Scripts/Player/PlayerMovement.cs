@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] GameObject torsoObject;
     [SerializeField] GameObject feetObject;
+    [SerializeField] GameObject hitbox;
     public enum EquipState { UNARMED, ARMED, ITEM };
     [SerializeField] public EquipState equip;
 
@@ -87,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
             maxSpeed = dashSpeed;
             speed = dashSpeed;
 
+            hitbox.SetActive(false);
             StartCoroutine(Dash());
         }
     }
@@ -95,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(dashTime);
         maxSpeed = normalSpeed;
+        hitbox.SetActive(true);
         yield break;
     }
 

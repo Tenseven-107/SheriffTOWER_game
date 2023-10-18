@@ -155,7 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 4
-  hitTag: Player
+  hitTag: PlayerHitbox
   hitName: PlayerHitbox
 --- !u!114 &6673646831785311819
 MonoBehaviour:

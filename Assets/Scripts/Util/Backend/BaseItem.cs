@@ -8,8 +8,7 @@ public class BaseItem : MonoBehaviour
     [SerializeField] public GameObject PlaceOnDrop;
     [SerializeField] string ContainerTag = "TowerContainer";
 
-    float bufferTime = 0.85f;
-    float last;
+    float bufferTime = 0.2f;
     BoxCollider2D coll;
 
     Transform container;
@@ -40,12 +39,6 @@ public class BaseItem : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
-                if (Time.time - last < bufferTime / 2)
-                {
-                    return;
-                }
-                last = Time.time;
-
                 PlayerPocket pocket = collisionObject.GetComponent<PlayerPocket>();
                 pocket.AddItem(gameObject);
 
