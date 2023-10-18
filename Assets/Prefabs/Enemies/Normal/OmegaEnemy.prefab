@@ -318,8 +318,9 @@ MonoBehaviour:
   juice: 0
   screenshakeTime: 0
   screenshakeIntensity: 0
-  audio: {fileID: 0}
-  anims: {fileID: 0}
+  atFire:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8170930656305041740
 GameObject:
   m_ObjectHideFlags: 0

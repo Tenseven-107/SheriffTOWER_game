@@ -5,6 +5,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TowerUpgrader : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class TowerUpgrader : MonoBehaviour
     SpriteRenderer sprite;
 
     MoneyBag moneyBag;
+
+    [SerializeField] UnityEvent onUpgrade;
 
 
 
@@ -45,6 +48,8 @@ public class TowerUpgrader : MonoBehaviour
             {
                 moneyBag.RemoveMoney(cost);
                 Upgrade();
+
+                onUpgrade.Invoke();
             }
         }
     }

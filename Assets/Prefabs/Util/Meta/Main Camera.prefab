@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothing: 25
-  X_confiner: 0.6
+  X_confiner: 1.6
   Y_confiner: 11.45
   minusX_confiner: 0.6
   minusY_confiner: 4

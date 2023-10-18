@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 9183281157904495466}
   - component: {fileID: 2318240718435043540}
   - component: {fileID: 91305537264475874}
-  - component: {fileID: 4045571576157562351}
+  - component: {fileID: 6673646831785311819}
+  - component: {fileID: 461519822138002176}
   m_Layer: 0
-  m_Name: EnemyBigProjectile
+  m_Name: EnemyEnergyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 748662080, guid: 41c7e826df8b07e43b1f47b18a3dbb0d, type: 3}
+  m_Sprite: {fileID: 348324346, guid: 41c7e826df8b07e43b1f47b18a3dbb0d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,8 +125,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.84, y: 0.7}
-  m_Direction: 1
+  m_Size: {x: 0.71, y: 0.98}
+  m_Direction: 0
 --- !u!114 &2318240718435043540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,8 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a426450ebf4b3647be9cb3154d1422a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12.5
-  timeAlive: 1.25
+  speed: 6
+  timeAlive: 3
   bulletLayer: 1
 --- !u!114 &91305537264475874
 MonoBehaviour:
@@ -153,10 +154,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21147e31bde07942b856a9bfdc9402b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 4
   hitTag: Player
   hitName: PlayerHitbox
---- !u!114 &4045571576157562351
+--- !u!114 &6673646831785311819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334692974232083145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 764cff531405a734787da109d84b559e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialRotation: 0
+  finalRotation: 360
+  duration: 0.25
+  ease: 1
+  loop: 0
+  looping: 1
+  atStart: 1
+--- !u!114 &461519822138002176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startScale: {x: 1, y: 1}
   endScale: {x: 0, y: 0}
-  duration: 1.25
-  ease: 21
+  duration: 3
+  ease: 20
   looping: 0
   atStart: 1

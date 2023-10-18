@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3924258349815091034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4633868148955195066}
+  - component: {fileID: 2464675660373536375}
+  m_Layer: 0
+  m_Name: SpriteParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4633868148955195066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924258349815091034}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4400780435562814002}
+  m_Father: {fileID: 6379946666012471312}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2464675660373536375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924258349815091034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScale: {x: 1.3, y: 0.9}
+  endScale: {x: 1, y: 1}
+  duration: 1
+  ease: 30
+  looping: 0
+  atStart: 1
 --- !u!1 &5706088085579884630
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +81,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6379946666012471312}
+  m_Father: {fileID: 4633868148955195066}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8115822943417947042
@@ -116,6 +167,7 @@ GameObject:
   - component: {fileID: 6379946666012471311}
   - component: {fileID: 6494026825714720319}
   - component: {fileID: 481351510701968902}
+  - component: {fileID: 2599627750203647736}
   m_Layer: 6
   m_Name: BaseTowerMelee
   m_TagString: Untagged
@@ -135,7 +187,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4400780435562814002}
+  - {fileID: 4633868148955195066}
   - {fileID: 7092242765835615408}
   - {fileID: 1885465341734678256}
   m_Father: {fileID: 0}
@@ -206,6 +258,21 @@ MonoBehaviour:
   nextUpgrade: 0
   canUpgrade: 1
   towerMono: {fileID: 6379946666012471311}
+  onUpgrade:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2599627750203647736}
+        m_TargetAssemblyTypeName: SpawnFX, Assembly-CSharp
+        m_MethodName: SpawnEffect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &481351510701968902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,6 +287,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 100
   destroy: 1
+--- !u!114 &2599627750203647736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6379946666012471314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363d14114bbff8c468f4bfafac23445a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headTransform: {fileID: 6379946666012471312}
+  fx: {fileID: 2322445597671624388, guid: 12a8d744c6224eb4b9624b6a0704dd24, type: 3}
 --- !u!1 &7092242765835615409
 GameObject:
   m_ObjectHideFlags: 0

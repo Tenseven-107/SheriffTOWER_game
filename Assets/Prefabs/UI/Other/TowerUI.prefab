@@ -430,7 +430,6 @@ GameObject:
   - component: {fileID: 6874549315997944774}
   - component: {fileID: 4202902609545107252}
   - component: {fileID: 8807524921519517611}
-  - component: {fileID: 1676498799981400710}
   m_Layer: 6
   m_Name: UpgradeButton
   m_TagString: Untagged
@@ -564,32 +563,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1676498799981400710}
-        m_TargetAssemblyTypeName: SpawnFX, Assembly-CSharp
-        m_MethodName: SpawnEffect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1676498799981400710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6787084514203201450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363d14114bbff8c468f4bfafac23445a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  headTransform: {fileID: 0}
-  fx: {fileID: 2322445597671624388, guid: 12a8d744c6224eb4b9624b6a0704dd24, type: 3}
 --- !u!1 &6984321119458965010
 GameObject:
   m_ObjectHideFlags: 0
