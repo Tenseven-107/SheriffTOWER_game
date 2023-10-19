@@ -17,12 +17,12 @@ public class StartColorTween : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
 
-        sprite.color = startColor;
         if (atStart == true) { StartTween(); }
     }
 
     public void StartTween()
     {
+        sprite.color = startColor;
         DOTweenModuleSprite.DOColor(sprite, endColor, time);
     }
 }

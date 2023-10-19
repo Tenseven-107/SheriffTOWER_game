@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject hitbox;
     public enum EquipState { UNARMED, ARMED, ITEM };
     [SerializeField] public EquipState equip;
+
+    [SerializeField] UnityEvent onDash;
 
 
     // Start is called before the first frame update
@@ -90,6 +93,8 @@ public class PlayerMovement : MonoBehaviour
 
             hitbox.SetActive(false);
             StartCoroutine(Dash());
+
+            onDash.Invoke();
         }
     }
 

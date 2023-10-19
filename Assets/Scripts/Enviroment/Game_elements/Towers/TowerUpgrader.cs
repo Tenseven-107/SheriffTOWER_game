@@ -21,6 +21,7 @@ public class TowerUpgrader : MonoBehaviour
     MoneyBag moneyBag;
 
     [SerializeField] UnityEvent onUpgrade;
+    [SerializeField] UnityEvent onNoUpgrade;
 
 
 
@@ -51,6 +52,7 @@ public class TowerUpgrader : MonoBehaviour
 
                 onUpgrade.Invoke();
             }
+            else { onNoUpgrade.Invoke(); }
         }
     }
 

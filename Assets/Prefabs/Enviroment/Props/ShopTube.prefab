@@ -427,7 +427,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2922708329119164474}
         m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
         m_MethodName: Press
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -948,7 +948,7 @@ MonoBehaviour:
       - m_Target: {fileID: 7383862554323319621}
         m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
         m_MethodName: Press
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1231,6 +1231,7 @@ Transform:
   - {fileID: 7292463385706489401}
   - {fileID: 7065987064434593213}
   - {fileID: 7917408131225627176}
+  - {fileID: 518924939850903422}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1294,6 +1295,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPos: {fileID: 7917408131225627176}
+  onBuy:
+    m_PersistentCalls:
+      m_Calls: []
+  onNoBuy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6031999494863223538}
+        m_TargetAssemblyTypeName: TweenMover, Assembly-CSharp
+        m_MethodName: StartTween
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1482390926231089183}
+        m_TargetAssemblyTypeName: TweenScaler, Assembly-CSharp
+        m_MethodName: StartTween
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3837801756773709850}
+        m_TargetAssemblyTypeName: RemoveDelay, Assembly-CSharp
+        m_MethodName: StartDelay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6852682967539023581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,7 +1463,7 @@ MonoBehaviour:
       - m_Target: {fileID: 4045856120300240099}
         m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
         m_MethodName: Press
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1583,14 +1626,14 @@ MonoBehaviour:
       - m_Target: {fileID: 952182383948328680}
         m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
         m_MethodName: Press
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 5156600734703369896}
         m_TargetAssemblyTypeName: TweenScaler, Assembly-CSharp
@@ -1619,7 +1662,7 @@ MonoBehaviour:
   shop: {fileID: 7272045489529651315}
   item: {fileID: 1872577239112258181, guid: 3d48262d1e3f72a43b56332558acd2df, type: 3}
   cost: 30
-  disableOnPress: 1
+  disableOnPress: 0
 --- !u!1 &7820303876632729150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,7 +1892,7 @@ MonoBehaviour:
       - m_Target: {fileID: 4227079058840243024}
         m_TargetAssemblyTypeName: ShopButton, Assembly-CSharp
         m_MethodName: Press
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2168,3 +2211,138 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1001 &2268662970835031320
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6506217794578875402}
+    m_Modifications:
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7.0627
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2.794
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.3677368
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122408994443654245, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+      propertyPath: m_Name
+      value: WarningCanvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+--- !u!224 &518924939850903422 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+  m_PrefabInstance: {fileID: 2268662970835031320}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1482390926231089183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 858334036696786183, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+  m_PrefabInstance: {fileID: 2268662970835031320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3837801756773709850 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3042591316176907522, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+  m_PrefabInstance: {fileID: 2268662970835031320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22657396012988f4696b88991d3f30d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6031999494863223538 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5534395520721367018, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+  m_PrefabInstance: {fileID: 2268662970835031320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd850633e63af1d41a28b6a9a70084f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

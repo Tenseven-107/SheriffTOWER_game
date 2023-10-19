@@ -7,6 +7,7 @@ using UnityEngine.Events;
 public class RemoveDelay : MonoBehaviour
 {
     [SerializeField] bool atStart = true;
+    [SerializeField] bool destruct = true;
 
     [SerializeField] float delay = 1f;
     WaitForSeconds timer;
@@ -23,6 +24,7 @@ public class RemoveDelay : MonoBehaviour
 
     public void StartDelay()
     {
+        gameObject.SetActive(true);
         StartCoroutine(Remove());
     }
 
@@ -31,7 +33,11 @@ public class RemoveDelay : MonoBehaviour
         yield return timer;
 
         afterDelayEvent.Invoke();
-        Destroy(gameObject);
+        if (destruct == true)
+        {
+            Destroy(gameObject);
+        }
+        else { gameObject.SetActive(false);  }
 
         yield break;
     }

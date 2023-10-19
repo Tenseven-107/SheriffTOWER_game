@@ -12,9 +12,9 @@ public class ShopButton : MonoBehaviour
 
     [SerializeField] bool disableOnPress = false;
 
-    public void Press()
+    public void Press(bool remove)
     {
-        shop.Buy(item, cost);
+        shop.Buy(item, cost, remove, gameObject);
         if (disableOnPress == true) gameObject.SetActive(false);
     }
 }
