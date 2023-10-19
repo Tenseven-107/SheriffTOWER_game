@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9183281157904495466}
   - component: {fileID: 2318240718435043540}
   - component: {fileID: 5385583990955941415}
+  - component: {fileID: 6445301669699805750}
   - component: {fileID: 898960382225751455}
   m_Layer: 0
   m_Name: GunBullet
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: cf811fd5f7e0fa040b51e08c24c37127, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -156,6 +157,22 @@ MonoBehaviour:
   damage: 2
   team: 0
   removeAfter: 1
+--- !u!114 &6445301669699805750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334692974232083145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363d14114bbff8c468f4bfafac23445a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  headTransform: {fileID: 4574849407888068441}
+  fx: {fileID: 1988731294804851451, guid: fceb0410438b87b439b743fdb929e8f3, type: 3}
+  giveRotation: 1
+  atStart: 1
 --- !u!96 &898960382225751455
 TrailRenderer:
   serializedVersion: 2

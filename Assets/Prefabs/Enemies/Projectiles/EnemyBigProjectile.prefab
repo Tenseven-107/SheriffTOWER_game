@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12.5
-  timeAlive: 1.25
+  timeAlive: 0.8
   bulletLayer: 1
 --- !u!114 &91305537264475874
 MonoBehaviour:
@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startScale: {x: 1, y: 1}
-  endScale: {x: 0, y: 0}
+  startScale: {x: 0, y: 0}
+  endScale: {x: 1, y: 1}
   duration: 1.25
   ease: 21
   looping: 0

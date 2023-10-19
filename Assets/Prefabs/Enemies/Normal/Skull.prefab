@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfde27ea93f935428140bd218cdd5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 3
 --- !u!114 &2364009331726662095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25300394c1d189a438b91baf829b7084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
-  maxHP: 15
+  hp: 30
+  maxHP: 30
   team: 1
   godmode: 0
   invincible: 0

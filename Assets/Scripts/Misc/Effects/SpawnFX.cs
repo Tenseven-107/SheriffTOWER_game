@@ -7,8 +7,23 @@ public class SpawnFX : MonoBehaviour
     [SerializeField] Transform headTransform;
     [SerializeField] GameObject fx;
 
+    [SerializeField] bool giveRotation = false;
+    [SerializeField] bool atStart = false;
+
+
+    private void Start()
+    {
+        if (atStart == true) { SpawnEffect(); }
+    }
+
     public void SpawnEffect()
     {
-        Instantiate(fx, headTransform.position, Quaternion.Euler(Vector2.zero), headTransform.parent);
+        Quaternion rot = Quaternion.Euler(Vector2.zero);
+        if (giveRotation == true)
+        {
+            rot = transform.rotation;
+        }
+
+        Instantiate(fx, headTransform.position, rot, headTransform.parent);
     }
 }

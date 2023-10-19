@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atStart: 1
+  destruct: 1
   delay: 4
   afterDelayEvent:
     m_PersistentCalls:
@@ -6053,7 +6054,7 @@ PrefabInstance:
     - target: {fileID: 7393667585801375541, guid: 5b685eaadf8bd1f4a85734160b61c6f1, type: 3}
       propertyPath: waves.Array.data[29].enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 3032206485327828991, guid: 12e6d511b56ba1046aef97318b16ec3a, type: 3}
+      objectReference: {fileID: 3032206485327828991, guid: c48d748f9be1d424a99ae5341011f345, type: 3}
     - target: {fileID: 7393667585801375541, guid: 5b685eaadf8bd1f4a85734160b61c6f1, type: 3}
       propertyPath: waves.Array.data[29].enemies.Array.data[1]
       value: 
