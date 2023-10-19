@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25300394c1d189a438b91baf829b7084, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 30
-  maxHP: 30
+  hp: 45
+  maxHP: 45
   team: 1
   godmode: 0
   invincible: 0
