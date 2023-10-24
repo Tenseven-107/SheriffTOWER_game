@@ -74,6 +74,10 @@ public class EnemySpawner : MonoBehaviour
                     currentWaveCount++;
                     SetNewWave();
                 }
+                else
+                {
+                    gameOverScreen.Activate();
+                }
             }
             else SpawnEnemy();
         }
@@ -87,11 +91,7 @@ public class EnemySpawner : MonoBehaviour
     // Remove enemies
     public void RemoveEnemies(bool setInactive)
     {
-        if  (setInactive == true) 
-        { 
-            active = false;
-            gameOverScreen.Activate();
-        }
+        if  (setInactive == true) { active = false; }
 
         int childCount = transform.childCount;
 
