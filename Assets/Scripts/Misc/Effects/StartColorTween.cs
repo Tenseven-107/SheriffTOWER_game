@@ -23,6 +23,11 @@ public class StartColorTween : MonoBehaviour
     public void StartTween()
     {
         sprite.color = startColor;
-        DOTweenModuleSprite.DOColor(sprite, endColor, time);
+        DOTweenModuleSprite.DOColor(sprite, endColor, time).SetId(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        DOTween.Kill(gameObject);
     }
 }
