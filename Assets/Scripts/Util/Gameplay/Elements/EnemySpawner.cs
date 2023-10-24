@@ -21,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
     public bool active = true;
 
     [SerializeField] Path path;
+    GameOverScreen gameOverScreen;
 
 
     // Setup
@@ -28,6 +29,9 @@ public class EnemySpawner : MonoBehaviour
     {
         SetNewWave();
         StartCoroutine(WaveLoop());
+
+        GameObject gameOverScreenObject = GameObject.FindGameObjectWithTag("GameOver");
+        gameOverScreen = gameOverScreenObject.GetComponent<GameOverScreen>();
     }
 
 
@@ -83,7 +87,11 @@ public class EnemySpawner : MonoBehaviour
     // Remove enemies
     public void RemoveEnemies(bool setInactive)
     {
-        if  (setInactive == true) { active = false; }
+        if  (setInactive == true) 
+        { 
+            active = false;
+            gameOverScreen.Activate();
+        }
 
         int childCount = transform.childCount;
 
