@@ -15,6 +15,9 @@ public class Objective : MonoBehaviour
 
     [SerializeField] EnemySpawner spawner;
     [SerializeField] UnityEvent atDamage;
+    [SerializeField] UnityEvent atDeath;
+
+    GameOverScreen gameOverScreen;
 
 
     private void Start()
@@ -25,6 +28,9 @@ public class Objective : MonoBehaviour
         {
             slider.minValue = -maxHP;
         }
+
+        GameObject gameOverScreenObject = GameObject.FindGameObjectWithTag("GameOver");
+        gameOverScreen = gameOverScreenObject.GetComponent<GameOverScreen>();
     }
 
     public void TakeDamage(int damage)
@@ -51,5 +57,8 @@ public class Objective : MonoBehaviour
     void GameOver()
     {
         spawner.RemoveEnemies(true);
+
+        atDeath.Invoke();
+        gameOverScreen.Activate();
     }
 }
