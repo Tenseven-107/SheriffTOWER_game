@@ -5091,6 +5091,7 @@ GameObject:
   - component: {fileID: 1159679083177571317}
   - component: {fileID: 6501250434726033708}
   - component: {fileID: 2715101256463402260}
+  - component: {fileID: 1811056123697070578}
   m_Layer: 6
   m_Name: BaseTowerShooter
   m_TagString: Untagged
@@ -5222,6 +5223,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1811056123697070578}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onNoUpgrade:
     m_PersistentCalls:
       m_Calls:
@@ -5261,6 +5274,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5023298420781982382}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6501250434726033708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5291,6 +5316,24 @@ MonoBehaviour:
   fx: {fileID: 2322445597671624388, guid: 12a8d744c6224eb4b9624b6a0704dd24, type: 3}
   giveRotation: 0
   atStart: 0
+--- !u!114 &1811056123697070578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7201941408974303357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 00b3c62eec4976c41a76270fb204ca57, type: 3}
+  maxPitch: 1.2
+  minVolumeIsVolume: 0
+  minVolume: 1
+  play_on_awake: 0
 --- !u!1 &7886205149989349266
 GameObject:
   m_ObjectHideFlags: 0
@@ -5466,6 +5509,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
   m_PrefabInstance: {fileID: 3068573186598338248}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5023298420781982382 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8008407576553643110, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+  m_PrefabInstance: {fileID: 3068573186598338248}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7375731160181592354 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5534395520721367018, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}

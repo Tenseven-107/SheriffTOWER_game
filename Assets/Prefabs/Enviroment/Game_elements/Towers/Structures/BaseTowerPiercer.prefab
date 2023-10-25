@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 2674013794166400026}
   - component: {fileID: 4237908872749891664}
   - component: {fileID: -630574391735391796}
+  - component: {fileID: 1831033807764995700}
   m_Layer: 0
   m_Name: BaseTowerPiercer
   m_TagString: Untagged
@@ -267,6 +268,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1831033807764995700}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onNoUpgrade:
     m_PersistentCalls:
       m_Calls:
@@ -306,6 +319,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5124001639711815113}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4237908872749891664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +361,24 @@ MonoBehaviour:
   fx: {fileID: 2322445597671624388, guid: 12a8d744c6224eb4b9624b6a0704dd24, type: 3}
   giveRotation: 0
   atStart: 0
+--- !u!114 &1831033807764995700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3830433337507061782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 00b3c62eec4976c41a76270fb204ca57, type: 3}
+  maxPitch: 1.2
+  minVolumeIsVolume: 0
+  minVolume: 1
+  play_on_awake: 0
 --- !u!1 &3830433337553793181
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +710,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1749788679394769510, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
   m_PrefabInstance: {fileID: 2900186310613166511}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5124001639711815113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8008407576553643110, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
+  m_PrefabInstance: {fileID: 2900186310613166511}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7273761390027884101 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5534395520721367018, guid: b6ca984336e012c46a57b55065ada1ad, type: 3}
