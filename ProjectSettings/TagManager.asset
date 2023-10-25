@@ -10,6 +10,7 @@ TagManager:
   - Objective
   - MoneyBag
   - GameOver
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX

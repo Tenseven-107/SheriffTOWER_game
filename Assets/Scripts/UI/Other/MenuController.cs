@@ -13,6 +13,8 @@ public class MenuController : MonoBehaviour
     {
         if (volumeSlider != null) volumeSlider.value = AudioListener.volume;
         if (fullscreenToggle != null) fullscreenToggle.isOn = Screen.fullScreen;
+
+        Cursor.visible = false;
     }
 
 
