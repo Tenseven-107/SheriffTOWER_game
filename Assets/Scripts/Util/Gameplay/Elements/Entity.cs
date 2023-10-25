@@ -90,14 +90,13 @@ public class Entity : MonoBehaviour
     {
         Color color = sprite.color;
 
-        sprite.color = Color.red;
         yield return flashTimer;
 
         for (float n = 0; n < iFrameTime; n += 0.1f)
         {
             if (flash)
             {
-                sprite.color = Color.clear;
+                sprite.color = Color.red;
                 yield return flashTimerShort;
                 sprite.color = color;
                 yield return flashTimerShort;
