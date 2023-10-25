@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 180083901515043358}
   - component: {fileID: 2711369529540847615}
   - component: {fileID: 1586189231769736265}
+  - component: {fileID: 3710578098511333641}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -279,3 +280,32 @@ MonoBehaviour:
           m_StringArgument: Attack
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 3710578098511333641}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3710578098511333641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494146564253181480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 99fab23b4dfa6f140a9ab827051904a5, type: 3}
+  maxPitch: 1.2
+  minVolume: 1
+  play_on_awake: 0

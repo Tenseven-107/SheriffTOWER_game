@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2364009331726662095}
   - component: {fileID: 8839146670282493215}
   - component: {fileID: 8237136416606888000}
+  - component: {fileID: -3636906193411615342}
   m_Layer: 7
   m_Name: Tank
   m_TagString: Untagged
@@ -206,6 +207,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -3636906193411615342}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onDeath:
     m_PersistentCalls:
       m_Calls:
@@ -254,6 +267,26 @@ MonoBehaviour:
   ease: 31
   looping: 0
   atStart: 1
+--- !u!114 &-3636906193411615342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032206485327828991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: c4ad094e22141bd44adb6084d3f18211, type: 3}
+  - {fileID: 8300000, guid: 05acadf8cc5383d43b3625a172dc565a, type: 3}
+  - {fileID: 8300000, guid: 3e5f8a5bc43857a40845d820cda952b4, type: 3}
+  maxPitch: 1.4
+  minVolumeIsVolume: 1
+  minVolume: 0.3
+  play_on_awake: 0
 --- !u!1 &8170930656305041740
 GameObject:
   m_ObjectHideFlags: 0

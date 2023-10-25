@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6171769102499252662}
   - component: {fileID: 4606218804121015827}
   - component: {fileID: 1740345019708880536}
+  - component: {fileID: 7855870859770204935}
   m_Layer: 0
   m_Name: SlideParticles
   m_TagString: Untagged
@@ -4937,6 +4938,23 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &7855870859770204935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226684576683350789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 4ae3cb9dd409f1c4d9f76277212481a5, type: 3}
+  maxPitch: 1.4
+  minVolume: 1
+  play_on_awake: 0
 --- !u!1 &1632360268125828714
 GameObject:
   m_ObjectHideFlags: 0
@@ -5393,6 +5411,7 @@ GameObject:
   - component: {fileID: 7228910640070816983}
   - component: {fileID: 7228910640070816981}
   - component: {fileID: 5209962779592468117}
+  - component: {fileID: 8936720918422535462}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5520,6 +5539,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7855870859770204935}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5209962779592468117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5538,6 +5569,38 @@ MonoBehaviour:
   weaponSlot: {fileID: 6922304715539529760}
   itemSprite: {fileID: 5873798590795475498}
   dropPos: {fileID: 3552285049707201940}
+  onAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8936720918422535462}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8936720918422535462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7228910640070816969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: e7fcbbea9b7c0b54ebedcf57018d265e, type: 3}
+  maxPitch: 1.4
+  minVolume: 1
+  play_on_awake: 0
 --- !u!1 &7228910640314255355
 GameObject:
   m_ObjectHideFlags: 0

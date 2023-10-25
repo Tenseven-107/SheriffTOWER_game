@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerPocket : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class PlayerPocket : MonoBehaviour
 
     [SerializeField] Transform dropPos;
     PlacementMarker placementMarker;
+
+    [SerializeField] UnityEvent onAction;
+
 
     float bufferTime = 1f;
     bool canDrop = false;
@@ -52,6 +56,8 @@ public class PlayerPocket : MonoBehaviour
             DropItem();
         }
 
+        onAction.Invoke();
+
         canDrop = false;
         StartCoroutine(PickupBuffer());
 
@@ -82,6 +88,8 @@ public class PlayerPocket : MonoBehaviour
 
     void DropItem()
     {
+        onAction.Invoke();
+
         heldItem.transform.position = dropPos.position;
 
         heldItem.SetActive(true);

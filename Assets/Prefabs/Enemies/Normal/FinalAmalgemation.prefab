@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2364009331726662095}
   - component: {fileID: 8839146670282493215}
   - component: {fileID: 8237136416606888000}
+  - component: {fileID: -825352868583265586}
   m_Layer: 7
   m_Name: FinalAmalgemation
   m_TagString: Untagged
@@ -220,6 +221,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -825352868583265586}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1042380309905257478}
         m_TargetAssemblyTypeName: BulletShooter, Assembly-CSharp
         m_MethodName: FireCircle
@@ -280,6 +293,27 @@ MonoBehaviour:
   ease: 31
   looping: 0
   atStart: 1
+--- !u!114 &-825352868583265586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032206485327828991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 501e647111c82fd47830b92da6b9a138, type: 3}
+  - {fileID: 8300000, guid: bac77f9a1ca85d54f92ecb362fc1801a, type: 3}
+  - {fileID: 8300000, guid: d181a725a954db3468a853d73c00b6dc, type: 3}
+  - {fileID: 8300000, guid: 7f757e23ef70fd74393c88930259ea5e, type: 3}
+  maxPitch: 1.4
+  minVolumeIsVolume: 1
+  minVolume: 0.3
+  play_on_awake: 0
 --- !u!1 &3114821062723408342
 GameObject:
   m_ObjectHideFlags: 0

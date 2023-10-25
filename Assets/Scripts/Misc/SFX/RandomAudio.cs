@@ -8,6 +8,8 @@ public class RandomAudio : MonoBehaviour
     AudioSource audio;
 
     [Range(0.01f, 3)] public float maxPitch = 1; // Maximum or minimum pitch of the sound (Leave at 1 for no randomized pitch)
+
+    [SerializeField] bool minVolumeIsVolume = false;
     [Range(0, 1)] public float minVolume = 1; // Minimum volume of the sound (Leave at 1 for no randomized volume)
 
     int clips_number;
@@ -33,6 +35,11 @@ public class RandomAudio : MonoBehaviour
 
         float pitch = Random.Range(1, maxPitch); // Pick random number of pitch
         float volume = Random.Range(minVolume, 1); // Pick random number of volume
+
+        if (minVolumeIsVolume == true)
+        {
+            volume = minVolume;
+        }
 
         audio.pitch = pitch;
         audio.volume = volume;

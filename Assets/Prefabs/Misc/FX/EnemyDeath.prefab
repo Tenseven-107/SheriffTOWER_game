@@ -4900,6 +4900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5415461009786824185}
   - component: {fileID: 4253743787053665809}
+  - component: {fileID: 8730579038656245283}
   m_Layer: 0
   m_Name: EnemyDeath
   m_TagString: Untagged
@@ -4938,10 +4939,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atStart: 1
+  destruct: 1
   delay: 1
   afterDelayEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8730579038656245283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2322445597671624388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: bc6ffd33d9627b647843acfe08f9b8c1, type: 3}
+  maxPitch: 1.5
+  minVolumeIsVolume: 1
+  minVolume: 0.5
+  play_on_awake: 1
 --- !u!1 &8395700408705369220
 GameObject:
   m_ObjectHideFlags: 0
