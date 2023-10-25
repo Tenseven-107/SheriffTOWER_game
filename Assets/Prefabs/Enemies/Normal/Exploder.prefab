@@ -238,7 +238,7 @@ MonoBehaviour:
   team: 1
   godmode: 0
   invincible: 0
-  iFrameTime: 0.1
+  iFrameTime: 0.05
   deactivate: 0
   sprite: {fileID: 7759770546000945465}
   deathEffect: {fileID: 2322445597671624388, guid: 477fe0490d30b2847b25832948f5ebcc, type: 3}

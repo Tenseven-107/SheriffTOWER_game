@@ -177,12 +177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c987d4eafd580264f85f4bf020342482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0.15
+  cooldown: 0.1
   bullets: 1
   fireTrans: {fileID: 746828870252218758}
   bullet: {fileID: 334692974232083145, guid: 81f7c9b526f42494385593b9da081367, type: 3}
   juice: 1
-  screenshakeTime: 0.3
+  screenshakeTime: 0.1
   screenshakeIntensity: 0.05
   atFire:
     m_PersistentCalls:
@@ -214,5 +214,6 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 494591d32cf890e43bb3d80ad9d7bb8e, type: 3}
   maxPitch: 1.2
+  minVolumeIsVolume: 0
   minVolume: 1
   play_on_awake: 0

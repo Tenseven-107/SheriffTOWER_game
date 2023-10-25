@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 2
   team: 0
-  removeAfter: 1
+  removeAfter: 0
 --- !u!114 &6445301669699805750
 MonoBehaviour:
   m_ObjectHideFlags: 0
