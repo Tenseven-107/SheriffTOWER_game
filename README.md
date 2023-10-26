@@ -5,11 +5,11 @@ Dit is een Tower defense game gemaakt voor een school opdracht!
 Sheriff TOWER is een Tower Defense game waar je niet een nobody bent, maar over het veld loopt om nieuwe towers te plaatsen!
 Loop rond het veld, plaats nieuwe torens en upgrade ze om zo ver mogelijk te komen en die mooie hoge rang te halen! 
 
-![Shop menu](Documentation/Screenshots/SheriffTOWER_game 26_10_2023 16_50_25.png)
+![Shop menu](Documentation/Screenshots/Screenshot-2.png)
 
-![Towers](Documentation/Screenshots/SheriffTOWER_game 26_10_2023 16_52_46.png)
+![Towers](Documentation/Screenshots/Screenshot-3.png)
 
-![Enemies!](Documentation/Screenshots/SheriffTOWER_game 26_10_2023 17_14_33.png)
+![Enemies!](Documentation/Screenshots/Screenshot-4.png)
 
 Ik heb Veel geleerd van dit project. Naast UnityEvents heb ik ook gebruik gemaakt van constructors om makkelijk in de editor te kunnen werken zonder constant in de code te hoeven duiken.
 Ik heb al mijn scripts zelf geschreven (en proberen te documenteren (Niet alles is gelukt maar het grootste deel is in het engels gedocumenteerd met comments)) en vond het leuk om te experimenteren met Unity en C# hun functies!
