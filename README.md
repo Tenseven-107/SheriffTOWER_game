@@ -28,7 +28,7 @@ Ik heb in mijn [assets](Assets) folder gebruik gemaakt van een nette mappen stru
 
 ## Build
 
-Hier is een [stabiele build](Assets/Builds/Release/SherrifTower_Game_Windows-ver_1.1.zip)
+Hier is een [stabiele build](Assets/Builds/Release/SherrifTower_Game_Windows-ver_1.1.zip).
 Graag raad ik je aan om ook een kijke te nemen op de itch pagina [hier!](https://tenseven.itch.io/sheriff-tower)
 
 
@@ -39,17 +39,56 @@ Graag raad ik je aan om ook een kijke te nemen op de itch pagina [hier!](https:/
 
 ## Onepage en Design
 
-Plaats hier een onepage
+![Messy onepage](Documentation/Onepage.png)
+
+**Torens:**
+
+Torens kunnen geplaatst worden op een grid door de speler. De speler koopt deze bij de winkel en kan ze dan oppakken. Torens schieten op de meest verre of meest dichtbijzijnde vijand. Er zijn verschillende torens, elk met zijn eigen manier van aanvallen. Veel torens kunnen volledig 360 graden mikken, maar bijvoorbeeld een ballista schiet in de richting die hij kijkt.
+
+
+**Winkel en resources:**
+
+Bij de winkel kan de speler torens kopen. De speler klikt op hetgene dat ze willen, en als ze genoeg geld hebben wordt het item (dat kan een toren of iets anders zijn) in gespawnd. Geld wordt verkregen door vijanden te verslaan.
+
+
+**Vijanden:**
+
+Vijanden volgen een pad naar hun doel. Zodra de vijand zijn doel bereikt richt hij schade aan. Er zijn meerdere vijanden. Zo zijn er vijanden die veel schade kunnen hebben, terwijl er een ander heel snel maar zwak is. Ook is er een vijand die erg veel geld oplevert en ook een die schade aan kan richten aan de speler.
+
+
+**Wave system:**
+
+Er is een wave systeem die gebruikt maakt van een for loop. Door middel van constructors te gebruiken in een lijst kun je in de editor makkelijk meer waves toevoegen met elk zijn eigen cooldown (tijd tussen enemies die gespawnd worden) en lijst van vijanden. 
+
+
+**Health en schade:** 
+
+Het doel van de vijanden levert schade op als ze het bereiken. Als het doel geen health meer heeft is het spel voorbij.
+
+
+**Upgrades:**
+
+Torens kunnen geüpgrade worden. Ook hiervoor gebruik ik een lijst met constructors waar ik stats van torens mee kan verhogen per upgrade. Elke upgrade heeft een prijs en neemt geld af als de speler de upgrade koopt, als de speler genoeg geld heeft.
+
+
+**Pickup- drop systeem:**
+
+De speler kan wapens, torens en items oppaken en gebruiken. De speler kan items oppakken met de knop *E* en weer laten vallen met dezelfde knop. Als de speler een item vast heeft en een ander item probeert op te pakken, dropt hij zijn huidige item. Torens worden geplaatst als deze gedropt worden.
+
+
+**Rank en score, replayability:**
+
+Op basis van hoe goed je speelt krijg je een rank. Je rank is op basis van hoever je komt en hoeveel geld je had bij je gameover. Aan het einde van alle waves ben je zoizo game over.
 
 
 ## Classdiagram
 
-![Messy Onepage](https://github.com/Tenseven-107/SheriffTOWER_game/blob/main/Documentation/ProjectClassDiagram.png?raw=true)
+![Messy class diagram](https://github.com/Tenseven-107/SheriffTOWER_game/blob/main/Documentation/ProjectClassDiagram.png?raw=true)
 
 
 ## Gameplay video
 
-Plaats hier een youtube video link van wat gameplay
+[![Video](https://img.youtube.com/vi/ZHllaeo2enQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=ZHllaeo2enQ)
 
 
 ## SCRUM / Planning
