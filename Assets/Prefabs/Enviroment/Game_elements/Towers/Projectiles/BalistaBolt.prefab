@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9183281157904495466}
   - component: {fileID: 2318240718435043540}
   - component: {fileID: 5385583990955941415}
+  - component: {fileID: 7176624205071721968}
   m_Layer: 0
   m_Name: BalistaBolt
   m_TagString: Untagged
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: bb071ec00f27daf4caac038d861e70a8, type: 3}
+  m_Sprite: {fileID: 989218358, guid: d4dd2c8cd2e380341bbd6c3320fc16ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +124,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.39, y: 0.61}
+  m_Size: {x: 2.12, y: 1.59}
   m_Direction: 1
 --- !u!114 &2318240718435043540
 MonoBehaviour:
@@ -137,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a426450ebf4b3647be9cb3154d1422a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 20
   timeAlive: 5
   bulletLayer: 8
 --- !u!114 &5385583990955941415
@@ -155,3 +156,21 @@ MonoBehaviour:
   damage: 1
   team: 0
   removeAfter: 0
+--- !u!114 &7176624205071721968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334692974232083145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScale: {x: 0, y: 0}
+  endScale: {x: 1, y: 1}
+  duration: 0.1
+  ease: 1
+  looping: 0
+  atStart: 1

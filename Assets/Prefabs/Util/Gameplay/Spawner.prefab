@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4d34eeab98a9c0409d89266c881d679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 3032206485327828991, guid: 22f3c31f8de89a9408e3e12f2104686d, type: 3}
-  spawnCooldown: 2
+  waves:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentWave: 0
   path: {fileID: 0}

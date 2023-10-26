@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BulletShooter : MonoBehaviour
 {
@@ -18,8 +19,8 @@ public class BulletShooter : MonoBehaviour
     [Range(0, 1)] public float screenshakeTime = 0; // Screenshake time
     [Range(0, 10)] public float screenshakeIntensity = 0; // Screenshake intensity
 
-    public RandomAudio audio; // Audio when fired
-    public Animator anims;
+    [SerializeField] UnityEvent atFire; // Invoked when firing
+    
 
 
     // Set up
@@ -53,8 +54,7 @@ public class BulletShooter : MonoBehaviour
             camera.screenshake(screenshakeTime, screenshakeIntensity);
         }
 
-        if (audio != null) audio.PlaySound();
-        if (anims != null) anims.Play("Attack");
+        atFire.Invoke();
     }
 
 
@@ -87,6 +87,6 @@ public class BulletShooter : MonoBehaviour
             camera.screenshake(screenshakeTime, screenshakeIntensity);
         }
 
-        if (audio != null) audio.PlaySound();
+        atFire.Invoke();
     }
 }

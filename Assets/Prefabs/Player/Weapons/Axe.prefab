@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 180083901515043358}
   - component: {fileID: 2711369529540847615}
   - component: {fileID: 1586189231769736265}
+  - component: {fileID: 3710578098511333641}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -244,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da82be7dc605e9478c2fe3d66ba36ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tweenSize: 1.5
 --- !u!114 &1586189231769736265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +263,49 @@ MonoBehaviour:
   fireTrans: {fileID: 746828870252218758}
   bullet: {fileID: 334692974232083145, guid: 04aba9b2edb30e74cbc191c9e662a880, type: 3}
   juice: 1
-  screenshakeTime: 0.2
+  screenshakeTime: 0.05
   screenshakeIntensity: 0.02
-  audio: {fileID: 0}
-  anims: {fileID: 5117795161072706517}
+  atFire:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5117795161072706517}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: Attack
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3710578098511333641}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3710578098511333641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494146564253181480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 99fab23b4dfa6f140a9ab827051904a5, type: 3}
+  maxPitch: 1.2
+  minVolume: 1
+  play_on_awake: 0

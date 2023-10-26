@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - BulletHolder
+  - TowerContainer
+  - ItemContainer
+  - Objective
+  - MoneyBag
+  - GameOver
+  - MusicPlayer
   layers:
   - Default
   - TransparentFX

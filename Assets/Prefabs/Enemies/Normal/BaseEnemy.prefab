@@ -13,7 +13,11 @@ GameObject:
   - component: {fileID: 3087927661758726952}
   - component: {fileID: 2096040460151571711}
   - component: {fileID: 622890580780241809}
+  - component: {fileID: 5318672110887008126}
   - component: {fileID: 2364009331726662095}
+  - component: {fileID: 8839146670282493215}
+  - component: {fileID: 8237136416606888000}
+  - component: {fileID: 6110967614699499744}
   m_Layer: 7
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -149,6 +153,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &5318672110887008126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032206485327828991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dfde27ea93f935428140bd218cdd5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!114 &2364009331726662095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,16 +183,110 @@ MonoBehaviour:
   team: 1
   godmode: 0
   invincible: 0
-  iFrameTime: 0.1
+  iFrameTime: 0.05
   deactivate: 0
   sprite: {fileID: 7759770546000945465}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 2322445597671624388, guid: 477fe0490d30b2847b25832948f5ebcc, type: 3}
   anims: {fileID: 0}
   juice: 0
   hitstopTime: 0
   screenshakeTime: 0
   screenshakeIntensity: 0
+  onHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2706231886222971174}
+        m_TargetAssemblyTypeName: TweenScaler, Assembly-CSharp
+        m_MethodName: StartTween
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6110967614699499744}
+        m_TargetAssemblyTypeName: RandomAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8839146670282493215}
+        m_TargetAssemblyTypeName: GiveMoney, Assembly-CSharp
+        m_MethodName: AddMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   audio: {fileID: 0}
+--- !u!114 &8839146670282493215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032206485327828991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e122116f32f74e45915341e8c7f4085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 1
+  destroy: 0
+--- !u!114 &8237136416606888000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032206485327828991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScale: {x: 0, y: 0}
+  endScale: {x: 1, y: 1}
+  duration: 1
+  ease: 31
+  looping: 0
+  atStart: 1
+--- !u!114 &6110967614699499744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032206485327828991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4abca572354d7e244b36f08264135682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: c4ad094e22141bd44adb6084d3f18211, type: 3}
+  - {fileID: 8300000, guid: 05acadf8cc5383d43b3625a172dc565a, type: 3}
+  - {fileID: 8300000, guid: 3e5f8a5bc43857a40845d820cda952b4, type: 3}
+  maxPitch: 1.4
+  minVolumeIsVolume: 1
+  minVolume: 0.3
+  play_on_awake: 0
 --- !u!1 &8170930656305041740
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6521201045162655305}
   - component: {fileID: 7759770546000945465}
+  - component: {fileID: 2706231886222971174}
   m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
@@ -201,7 +313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8170930656305041740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.48597002, z: 0}
+  m_LocalPosition: {x: 0, y: 1.01202, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -260,3 +372,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2706231886222971174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170930656305041740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScale: {x: 0.85, y: 1.2}
+  endScale: {x: 1, y: 1}
+  duration: 0.2
+  ease: 31
+  looping: 0
+  atStart: 0

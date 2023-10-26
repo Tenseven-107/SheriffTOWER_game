@@ -8,6 +8,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerMeleeWeapon : MonoBehaviour
 {
+    // Meleeweapon of the player, same as PlayerWeapon, but without ammo
+
     [SerializeField] float tweenSize = 1.5f;
 
     Transform spriteTrans;

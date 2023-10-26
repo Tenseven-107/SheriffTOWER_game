@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1872577239112258191}
   - component: {fileID: 1872577239112258187}
   - component: {fileID: 1872577239112258186}
+  - component: {fileID: -911297326148188986}
   m_Layer: 0
   m_Name: WeaponItem
   m_TagString: Untagged
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSprite: {fileID: 0}
   type: 1
+  upgrader: 0
   weapon: {fileID: 5494146564253181480, guid: b3a9da1dea195a14c9533fc216aaf2c5, type: 3}
 --- !u!114 &1872577239112258186
 MonoBehaviour:
@@ -140,3 +142,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b8411ca37e8914686ae904ec113097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlaceOnDrop: {fileID: 0}
+  ContainerTag: TowerContainer
+--- !u!114 &-911297326148188986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872577239112258181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScale: {x: 0, y: 0}
+  endScale: {x: 1, y: 1}
+  duration: 0.25
+  ease: 31
+  looping: 0
+  atStart: 1

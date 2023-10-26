@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7208723478910764600}
   - component: {fileID: 3312319387515992322}
   - component: {fileID: 5405284109003812188}
+  - component: {fileID: 1899974628816344415}
+  - component: {fileID: 2193468901332235338}
   m_Layer: 8
   m_Name: Explosion
   m_TagString: Untagged
@@ -75,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.5169239, b: 0, a: 1}
+  m_Sprite: {fileID: 2048763795, guid: d4dd2c8cd2e380341bbd6c3320fc16ae, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -101,7 +103,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.11
 --- !u!114 &5405284109003812188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,4 +118,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   team: 0
-  removeAfter: 1
+  removeAfter: 0
+--- !u!114 &1899974628816344415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3321042262688788863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51898a8ec31695244876c1132fdc5966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startScale: {x: 1.25, y: 1.25}
+  endScale: {x: 0, y: 0}
+  duration: 0.5
+  ease: 25
+  looping: 0
+  atStart: 1
+--- !u!114 &2193468901332235338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3321042262688788863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22657396012988f4696b88991d3f30d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atStart: 1
+  delay: 0.55

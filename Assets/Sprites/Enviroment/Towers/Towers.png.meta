@@ -157,9 +157,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 97
-        y: 1680
-        width: 203
-        height: 293
+        y: 1698
+        width: 184
+        height: 275
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,9 +178,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 477
-        y: 1680
-        width: 203
-        height: 293
+        y: 1698
+        width: 184
+        height: 255
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,10 +198,10 @@ TextureImporter:
       name: Towers_2
       rect:
         serializedVersion: 2
-        x: 877
-        y: 1680
-        width: 203
-        height: 293
+        x: 897
+        y: 1698
+        width: 145
+        height: 284
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -220,9 +220,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 7
-        y: 1460
+        y: 1478
         width: 364
-        height: 163
+        height: 145
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -283,9 +283,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 118
-        y: 1280
+        y: 1298
         width: 144
-        height: 171
+        height: 153
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -325,9 +325,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 97
-        y: 1080
+        y: 1098
         width: 185
-        height: 162
+        height: 144
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,9 +346,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 477
-        y: 1080
+        y: 1098
         width: 185
-        height: 182
+        height: 164
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -367,9 +367,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 867
-        y: 1080
+        y: 1098
         width: 205
-        height: 182
+        height: 164
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -429,6 +429,48 @@ TextureImporter:
       name: Towers_13
       rect:
         serializedVersion: 2
+        x: 557
+        y: 878
+        width: 205
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a40e25916b008ed4aad1ba830cef109b
+      internalID: 989218358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Towers_14
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 878
+        width: 285
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68b72da5a2777240bb2086ca2c6b7d1
+      internalID: 635222198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Towers_15
+      rect:
+        serializedVersion: 2
         x: 60
         y: 420
         width: 440
@@ -440,8 +482,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a40e25916b008ed4aad1ba830cef109b
-      internalID: 989218358
+      spriteID: 0efc370980a15e4408613147487cb3e9
+      internalID: -52618580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Towers_16
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 678
+        width: 304
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51393674805e0ca49a09bc8767ca078a
+      internalID: -1041185654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Towers_17
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 430
+        width: 221
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db4a32dc1f0b914da72adae984826ee
+      internalID: 2048763795
       vertices: []
       indices: 
       edges: []
@@ -459,7 +543,9 @@ TextureImporter:
     nameFileIdTable:
       Towers_2: 468329893
       Towers_11: -45702364
+      Towers_15: -52618580
       Towers_1: -1027803024
+      Towers_16: -1041185654
       Towers_12: -864047009
       Towers_4: 1668189610
       Towers_8: 1486362949
@@ -469,6 +555,8 @@ TextureImporter:
       Towers_10: 850535635
       Towers_13: 989218358
       Towers_7: -1247585358
+      Towers_14: 635222198
+      Towers_17: 2048763795
       Towers_5: -1928904622
       Towers_9: 1045605255
   spritePackingTag: 

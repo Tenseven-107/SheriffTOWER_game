@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerBomber : MonoBehaviour
 {
+    // Logic for Bomb towers to fire at enemies within range
+
     TowerBomberShooter shooter;
     TowerDetection area;
 

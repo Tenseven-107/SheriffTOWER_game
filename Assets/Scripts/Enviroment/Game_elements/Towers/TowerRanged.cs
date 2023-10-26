@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerRanged : MonoBehaviour
 {
+    // Logic for normal Ranger towers to fire at enemies within range
+
     BulletShooter shooter;
     Transform shooterTrans;
 

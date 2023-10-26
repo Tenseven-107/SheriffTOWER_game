@@ -9,6 +9,8 @@ public class ItemData : MonoBehaviour
     public enum ItemTypes { ITEM, WEAPON, TOWER };
     [SerializeField] public ItemTypes type;
 
+    [SerializeField] public bool upgrader = false;
+
     [SerializeField] public GameObject weapon;
 
 
@@ -20,11 +22,5 @@ public class ItemData : MonoBehaviour
             SpriteRenderer currentSprite = gameObject.GetComponent<SpriteRenderer>();
             itemSprite = currentSprite.sprite;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

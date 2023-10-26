@@ -4,7 +4,6 @@ using System.Drawing;
 using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class GameCamera : MonoBehaviour
 {

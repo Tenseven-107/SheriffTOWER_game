@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerPiercer : MonoBehaviour
 {
+    // Logic for Pierce towers to fire at enemies within range
+
     BulletShooter shooter;
     TowerRaycastDetect detector;
 

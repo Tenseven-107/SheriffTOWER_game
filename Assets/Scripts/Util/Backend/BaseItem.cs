@@ -1,11 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BaseItem : MonoBehaviour
 {
-    float dropBufferTime = 0.8f;
+    [SerializeField] public GameObject PlaceOnDrop;
+    [SerializeField] string ContainerTag = "TowerContainer";
+
+    float bufferTime = 0.2f;
     BoxCollider2D coll;
+
+    Transform container;
+    PositionToGridpos posToGrid;
+    CheckGridPosition gridChecker;
+
+
 
     private void Start()
     {
@@ -13,6 +23,12 @@ public class BaseItem : MonoBehaviour
 
         Vector2 size = coll.size;
         coll.size = new Vector2(size.x * 1.5f, size.y * 1.5f);
+
+        GameObject CheckObject = GameObject.FindGameObjectWithTag("TowerContainer");
+        gridChecker = CheckObject.GetComponent<CheckGridPosition>();
+
+        container = GameObject.FindWithTag(ContainerTag).transform;
+        posToGrid = gameObject.AddComponent<PositionToGridpos>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -32,15 +48,32 @@ public class BaseItem : MonoBehaviour
     }
 
 
-    public void DropBuffer()
+    public void Drop()
     {
-        coll.enabled = false;
-        StartCoroutine(BufferTime());
+        if (PlaceOnDrop != null)
+        {
+            if (gridChecker.CheckIfAvailable(posToGrid.PositionToGrid(transform.position)))
+            {
+                Instantiate(PlaceOnDrop, posToGrid.PositionToGrid(transform.position), Quaternion.Euler(0, 0, 0), container);
+
+                Destroy(gameObject);
+            }
+            else
+            {
+                coll.enabled = false;
+                StartCoroutine(BufferTime());
+            }
+        }
+        else
+        {
+            coll.enabled = false;
+            StartCoroutine(BufferTime());
+        }
     }
 
     IEnumerator BufferTime()
     {
-        yield return new WaitForSeconds(dropBufferTime);
+        yield return new WaitForSeconds(bufferTime);
         coll.enabled = true;
         yield break;
     }

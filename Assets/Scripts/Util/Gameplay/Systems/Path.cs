@@ -37,12 +37,17 @@ public class Path : MonoBehaviour
         return points[0];
     }
 
+    public Vector2 GetLast()
+    {
+        return points[points.Count - 1];
+    }
+
 
     public Vector2 NextPoint(Vector2 currentPoint)
     {
         foreach (var point in points)
         {
-            if ((Vector2)point == currentPoint)
+            if ((Vector2)point == currentPoint && (Vector2)point != GetLast())
             {
                 int index = points.IndexOf(point) + 1;
                 Vector2 nextPoint = points[index];
@@ -51,6 +56,6 @@ public class Path : MonoBehaviour
             }
         }
 
-        return Vector2.zero;
+        return GetLast();
     }
 }
