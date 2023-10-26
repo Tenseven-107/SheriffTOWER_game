@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class SpawnFX : MonoBehaviour
 {
-    [SerializeField] Transform headTransform;
-    [SerializeField] GameObject fx;
+    // Spawns a new effect, which is a gameobject
 
-    [SerializeField] bool giveRotation = false;
-    [SerializeField] bool atStart = false;
+    [SerializeField] Transform headTransform; // The transform of the object, needed to get the parent so that the effect can spawn in the same container as the object
+    [SerializeField] GameObject fx; // Effect that wilol be spawned
+
+    [SerializeField] bool giveRotation = false; // If spawned effect should inherit rotation
+    [SerializeField] bool atStart = false; // If effect should be played at start
 
 
     private void Start()
@@ -16,6 +18,7 @@ public class SpawnFX : MonoBehaviour
         if (atStart == true) { SpawnEffect(); }
     }
 
+    // Spawns effect
     public void SpawnEffect()
     {
         Quaternion rot = Quaternion.Euler(Vector2.zero);

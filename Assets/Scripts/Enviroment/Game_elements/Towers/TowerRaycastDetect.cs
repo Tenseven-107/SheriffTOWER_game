@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class TowerRaycastDetect : MonoBehaviour
 {
-    [SerializeField] public float range = 10;
+    // Raycast instead of collider to detect enemies
 
-    [SerializeField] int areaLayerSelf = 6;
-    [SerializeField] int areaLayer = 8;
+    [SerializeField] public float range = 10; // Rnage of Raycast
 
-    [SerializeField] bool testing = false;
+    [SerializeField] int areaLayerSelf = 6; // Towers own physics layer
+    [SerializeField] int areaLayer = 8; // Physics layer of enemies needing to be detected
 
-    Vector2 direction = Vector2.zero;
+    [SerializeField] bool testing = false; // Debug value for showing Raycast
+
+    Vector2 direction = Vector2.zero; // The direction of the ray
 
 
     private void Start()

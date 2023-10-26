@@ -5,28 +5,31 @@ using UnityEngine;
 
 public class TowerUI : MonoBehaviour
 {
+    // UI of the tower for upgrading and destroying towers
+
     [Header("Tower")]
-    [SerializeField] TowerUpgrader upgrader;
-    int cost = 0;
+    [SerializeField] TowerUpgrader upgrader; // Tower upgrader for upgrading towers
+    int cost = 0; // Cost of next upgrade
 
     [Header("UI")]
-    [SerializeField] GameObject UI;
-    [SerializeField] GameObject UpgradeButton;
-    [SerializeField] TextMeshProUGUI costLabel;
+    [SerializeField] GameObject UI; // UI element
+    [SerializeField] GameObject UpgradeButton; // Button to upgrade
+    [SerializeField] TextMeshProUGUI costLabel; // Label showing upgrade cost
 
     [Header("FX")]
-    [SerializeField] Animation anims;
-    [SerializeField] TweenScaler popupTween;
+    [SerializeField] Animation anims; // Animations played
+    [SerializeField] TweenScaler popupTween; // Tween playing for the UI element appearing
 
 
 
     private void Start()
     {
-        cost = upgrader.GetCost();
-        costLabel.text = "Cost: " + cost.ToString();
+        cost = upgrader.GetCost(); // Getting cost of the first upgrade
+        costLabel.text = "Cost: " + cost.ToString(); // Sets label text to the cost
     }
 
 
+    // Plays animation when player is close to tower with an Upgrade Kit item
     private void OnTriggerEnter2D(Collider2D collision)
     {
         GameObject colliderObject = collision.gameObject;
@@ -44,6 +47,7 @@ public class TowerUI : MonoBehaviour
         }
     }
 
+    // Deactivates UI when player leaves
     private void OnTriggerExit2D(Collider2D collision)
     {
         GameObject colliderObject = collision.gameObject;
@@ -54,6 +58,7 @@ public class TowerUI : MonoBehaviour
         }
     }
 
+    // Updates UI when interacted with
     public void UpdateUI()
     {
         if (upgrader.canUpgrade == true)

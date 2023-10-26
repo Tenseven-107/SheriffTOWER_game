@@ -1,0 +1,1238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="EnemyObjectiveDamager">
+    <Position X="6" Y="4.25" Width="1.5" />
+    <Members>
+      <Field Name="moveDistance" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAAAEAACAAgBAAAAACAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\EnemyObjectiveDamager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="damage" />
+      <Field Name="finalPos" />
+      <Field Name="follower" />
+      <Field Name="objective" />
+      <Field Name="path" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GiveMoney">
+    <Position X="100.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAAAAAAAAAEAAAAAAAAAAAAABAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\GiveMoney.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="destroy" />
+      <Field Name="money" />
+      <Field Name="moneyBag" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PathFollower">
+    <Position X="42" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="FixedUpdate" Hidden="true" />
+      <Method Name="MoveLoop" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAkAAACAAAAIAACIQAAAAAJAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enemies\PathFollower.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currentDestination" />
+      <Field Name="moveDistance" />
+      <Field Name="path" />
+      <Field Name="rb" />
+      <Field Name="speed" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerBomber">
+    <Position X="87" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerBomber.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="area" />
+      <Field Name="shooter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerBomberShooter">
+    <Position X="102.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAIAAAAAAAAAAACAABAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerBomberShooter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="atFire" />
+      <Field Name="cooldown" />
+      <Field Name="explosion" />
+      <Field Name="last" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerDetection">
+    <Position X="114" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="CheckArea" Hidden="true" />
+      <Method Name="OnDrawGizmos" Hidden="true" />
+      <Method Name="OnTriggerExit2D" Hidden="true" />
+      <Field Name="range" Hidden="true" />
+      <Method Name="SetLock" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="TowerDetection.Ranges" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerDetection.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAQGABCIBCAAAAAQAAAAAAAAAAQAAAEAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerDetection.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="areaLayer" />
+      <Field Name="areaLayerSelf" />
+      <Field Name="areaSize" />
+      <Field Name="lockedEnemy" />
+      <Field Name="testing" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerMelee">
+    <Position X="8.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerMelee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="area" />
+      <Field Name="damager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerMeleeDamager">
+    <Position X="24" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="DamageArea" Hidden="true" />
+      <Method Name="OnDrawGizmos" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAGABAABCAAgAAAAAACAAAAACAQAAEAAAgAQAAAAgA=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerMeleeDamager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="areaLayer" />
+      <Field Name="areaLayerSelf" />
+      <Field Name="areaSize" />
+      <Field Name="cooldown" />
+      <Field Name="damage" />
+      <Field Name="last" />
+      <Field Name="lockedEnemy" />
+      <Field Name="meleeEvent" />
+      <Field Name="team" />
+      <Field Name="testing" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerPiercer">
+    <Position X="44.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAACAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerPiercer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="detector" />
+      <Field Name="shooter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerRanged">
+    <Position X="55.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="FixedUpdate" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAQAAAAAAAAAAAAAAAAACAAAAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerRanged.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="area" />
+      <Field Name="shooter" />
+      <Field Name="shooterTrans" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerRaycastDetect">
+    <Position X="71.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnDrawGizmos" Hidden="true" />
+      <Method Name="SetDirection" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAGAAAIBCAAIAAAAAAAAAAAAAAAAAEAAACAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerRaycastDetect.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="areaLayer" />
+      <Field Name="areaLayerSelf" />
+      <Field Name="direction" />
+      <Field Name="range" />
+      <Field Name="testing" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerUI">
+    <Position X="89.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Field Name="anims" Hidden="true" />
+      <Method Name="OnTriggerEnter2D" Hidden="true" />
+      <Method Name="OnTriggerExit2D" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAQgACAECAgAACAAAAAAAAAAEIQAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerUI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cost" />
+      <Field Name="costLabel" />
+      <Field Name="popupTween" />
+      <Field Name="UI" />
+      <Field Name="UpgradeButton" />
+      <Field Name="upgrader" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TowerUpgradeConstruct" Collapsed="true">
+    <Position X="131.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAwAAAAEAAAAAAAYAA=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerUpgradeConstruct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TowerUpgrader">
+    <Position X="3.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Upgrade" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQBAAQACACAAAAAAAAAgAAggABAAAAAEAAABIAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Enviroment\Game_elements\Towers\TowerUpgrader.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="moneyBag" />
+      <Field Name="canUpgrade" />
+      <Field Name="nextUpgrade" />
+      <Field Name="onNoUpgrade" />
+      <Field Name="onUpgrade" />
+      <Field Name="sprite" />
+      <Field Name="towerClass" />
+      <Field Name="towerMono" />
+      <Field Name="towerUpgrades" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CamJuiceEmitter">
+    <Position X="91.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAAAAAAABAAAAAAAAIAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\Misc\Effects\CamJuiceEmitter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="camera" />
+      <Field Name="hitstopTime" />
+      <Field Name="screenshakeIntensity" />
+      <Field Name="screenshakeTime" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="SpawnFX">
+    <Position X="46.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAACAAAAIAAAAAAAAQAAAABAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Misc\Effects\SpawnFX.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="atStart" />
+      <Field Name="fx" />
+      <Field Name="giveRotation" />
+      <Field Name="headTransform" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="StartColorTween">
+    <Position X="57.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnDestroy" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAARAAAAACAAAAAEAAAAAAAAABAAAAAACAAAAEAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Misc\Effects\StartColorTween.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="atStart" />
+      <Field Name="endColor" />
+      <Field Name="sprite" />
+      <Field Name="startColor" />
+      <Field Name="time" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TilemapView">
+    <Position X="73.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACIAAAAAAEEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Misc\Effects\TilemapView.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="endPoint" />
+      <Field Name="grid" />
+      <Field Name="startingPoint" />
+      <Field Name="time" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TweenMover">
+    <Position X="116.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnDestroy" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABAZAAIAACAAABAAAAAAAAAAAAAAAAAACAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Misc\Effects\TweenMover.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="atStart" />
+      <Field Name="duration" />
+      <Field Name="ease" />
+      <Field Name="endPosition" />
+      <Field Name="looping" />
+      <Field Name="startPosition" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TweenRotater">
+    <Position X="10.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnDestroy" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAZAAIAACAACAAAAAAAAAAAAAAAAACACAAAAAAAAAM=</HashCode>
+      <FileName>Assets\Scripts\Misc\Effects\TweenRotater.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="atStart" />
+      <Field Name="duration" />
+      <Field Name="ease" />
+      <Field Name="finalRotation" />
+      <Field Name="initialRotation" />
+      <Field Name="loop" />
+      <Field Name="looping" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TweenScaler">
+    <Position X="26.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnDestroy" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAZAAIAACAAAEAAAAAAAAAAAAABAAAACAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Misc\Effects\TweenScaler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="atStart" />
+      <Field Name="duration" />
+      <Field Name="ease" />
+      <Field Name="endScale" />
+      <Field Name="looping" />
+      <Field Name="startScale" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BattleMusicPlayer">
+    <Position X="28.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Awake" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="StartFade" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQABQAAQiAAAAAAAAAAABgAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Misc\SFX\BattleMusicPlayer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="fadeDuration" />
+      <Field Name="musicClip" />
+      <Field Name="musicPlayer" />
+      <Field Name="musicSource" />
+      <Field Name="spawner" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MusicPlayer">
+    <Position X="93.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Awake" Hidden="true" />
+      <Method Name="CheckDoubles" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAQAAABAAAAAAABAAAAAAAAAiAEA=</HashCode>
+      <FileName>Assets\Scripts\Misc\SFX\MusicPlayer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="musicClips" />
+      <Field Name="musicSource" />
+      <Field Name="volume" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MusicSetter">
+    <Position X="105" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAACAAAAAAAAQAAAAAAAAIAAAAgAACAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Misc\SFX\MusicSetter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="mp" />
+      <Field Name="musicPlayer" />
+      <Field Name="song" />
+      <Field Name="startOnAwake" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RandomAudio">
+    <Position X="48.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ABACAAAAACAAAQAAAAAAEAgBAAAAAQAAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Misc\SFX\RandomAudio.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="audio" />
+      <Field Name="clips" />
+      <Field Name="clips_number" />
+      <Field Name="maxPitch" />
+      <Field Name="minVolume" />
+      <Field Name="minVolumeIsVolume" />
+      <Field Name="play_on_awake" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerMeleeWeapon">
+    <Position X="96" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="FireLoop" Hidden="true" />
+      <Method Name="FixedUpdate" Hidden="true" />
+      <Method Name="PointToMouse" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAiAgAQAAAAAAAAAAABAgAAACAAAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerMeleeWeapon.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cam" />
+      <Field Name="shooter" />
+      <Field Name="sprite" />
+      <Field Name="spriteTrans" />
+      <Field Name="tweenSize" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerMovement">
+    <Position X="107.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Dash" Hidden="true" />
+      <Method Name="Dashing" Hidden="true" />
+      <Field Name="equip" Hidden="true" />
+      <Method Name="FixedUpdate" Hidden="true" />
+      <Method Name="Movement" Hidden="true" />
+      <Method Name="SetAnimations" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="PlayerMovement.EquipState" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Player\PlayerMovement.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AQQAAAQAAiAAAAYEBAAgACAAAAQADQQgAAQAIAAgQAA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="acceleration" />
+      <Field Name="dashCooldown" />
+      <Field Name="dashSpeed" />
+      <Field Name="dashTime" />
+      <Field Name="feetObject" />
+      <Field Name="hitbox" />
+      <Field Name="lastDash" />
+      <Field Name="maxSpeed" />
+      <Field Name="normalSpeed" />
+      <Field Name="onDash" />
+      <Field Name="rb" />
+      <Field Name="speed" />
+      <Field Name="torsoObject" />
+      <Field Name="velocity" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerPocket">
+    <Position X="118.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="DropItem" Hidden="true" />
+      <Method Name="PickupBuffer" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAACAAACAQAAAAgQAAAAAAiAAAAAADASAAECAgEAA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerPocket.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="bufferTime" />
+      <Field Name="canDrop" />
+      <Field Name="dropPos" />
+      <Field Name="heldItem" />
+      <Field Name="itemCanUpgrade" />
+      <Field Name="itemData" />
+      <Field Name="itemSprite" />
+      <Field Name="onAction" />
+      <Field Name="placementMarker" />
+      <Field Name="player" />
+      <Field Name="weapon" />
+      <Field Name="weaponSlot" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlayerWeapon">
+    <Position X="12.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="FireLoop" Hidden="true" />
+      <Method Name="FixedUpdate" Hidden="true" />
+      <Method Name="PointToMouse" Hidden="true" />
+      <Method Name="ReloadLoop" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQABAAAAqAgAQAAAAAAAAAAABAABAISAQAAAAIAAAA=</HashCode>
+      <FileName>Assets\Scripts\Player\PlayerWeapon.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="bullets" />
+      <Field Name="cam" />
+      <Field Name="currentBullets" />
+      <Field Name="reloading" />
+      <Field Name="reloadTime" />
+      <Field Name="shooter" />
+      <Field Name="sprite" />
+      <Field Name="spriteTrans" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GameOverScreen">
+    <Position X="98.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAIIAAACAAAAJAAAAAAIgAAAAAABAAAgAEAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Hud\GameOverScreen.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="calculator" />
+      <Field Name="menu" />
+      <Field Name="moneyScoreLabel" />
+      <Field Name="rankLabel" />
+      <Field Name="totalScoreLabel" />
+      <Field Name="waveScoreLabel" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MoneyUI">
+    <Position X="60" Y="4.25" Width="1.5" />
+    <Members>
+      <Field Name="canvas" Hidden="true" />
+      <Method Name="OnTriggerEnter2D" Hidden="true" />
+      <Method Name="OnTriggerExit2D" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAQAACAACAAAAAAAAAAAAACAEAAAAAIBAABAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Hud\MoneyUI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="backgroundMover" />
+      <Field Name="backgroundScaler" />
+      <Field Name="bagScaler" />
+      <Field Name="moneyBag" />
+      <Field Name="text" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PauseMenu">
+    <Position X="62.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAIAAAACAAAAAAAAAAAAgAAAAAAAAAAAAAAAgAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Hud\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="menu" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PlacementMarker">
+    <Position X="75.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACIAQAAAAAAAABAAABAAAAAAAgAAIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Hud\PlacementMarker.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="active" />
+      <Field Name="grid" />
+      <Field Name="gridChecker" />
+      <Field Name="sprite" />
+      <Property Name="isActive" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ShopMoney">
+    <Position X="15" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnTriggerEnter2D" Hidden="true" />
+      <Method Name="OnTriggerExit2D" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAAACAACAAAAAAAAAAAAAAAEAAAAAIAAABIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Hud\ShopMoney.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="active" />
+      <Field Name="moneyBag" />
+      <Field Name="text" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ShopUIEnabler">
+    <Position X="30.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnTriggerEnter2D" Hidden="true" />
+      <Method Name="OnTriggerExit2D" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAACAAAAAAAIAAAAAAAEAAAAIAAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Hud\ShopUIEnabler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="UI" />
+      <Field Name="UIMover" />
+      <Field Name="UIScaler" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MainMenuScrolling">
+    <Position X="33" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="FixedUpdate" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAAAACAAAAAABAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Other\MainMenuScrolling.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="child" />
+      <Field Name="speed" />
+      <Field Name="sprite" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MenuController">
+    <Position X="51" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAAAAAAAACABAEAAAAAAAAAAAAAAACAAQA=</HashCode>
+      <FileName>Assets\Scripts\UI\Other\MenuController.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="fullscreenToggle" />
+      <Field Name="volumeSlider" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BaseItem">
+    <Position X="17.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="BufferTime" Hidden="true" />
+      <Method Name="Drop" Hidden="true" />
+      <Method Name="OnTriggerStay2D" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAiBQAAAAACAAAAAAABAAAAAAAoAAEAAAABA=</HashCode>
+      <FileName>Assets\Scripts\Util\Backend\BaseItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="bufferTime" />
+      <Field Name="coll" />
+      <Field Name="container" />
+      <Field Name="ContainerTag" />
+      <Field Name="gridChecker" />
+      <Field Name="PlaceOnDrop" />
+      <Field Name="posToGrid" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CheckGridPosition">
+    <Position X="109.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Backend\CheckGridPosition.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HideDelay">
+    <Position X="120.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Hide" Hidden="true" />
+      <Method Name="OnDestroy" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IAQRAAAAACAAAAAAEAAAAAgAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Backend\HideDelay.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="atStart" />
+      <Field Name="delay" />
+      <Field Name="sprite" />
+      <Field Name="timer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ItemData">
+    <Position X="19.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+      <Field Name="type" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="ItemData.ItemTypes" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Util\Backend\ItemData.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAAAAAAAAAACAABAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Backend\ItemData.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="itemSprite" />
+      <Field Name="upgrader" />
+      <Field Name="weapon" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="PositionToGridpos">
+    <Position X="35.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Backend\PositionToGridpos.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="gridSize" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RemoveDelay">
+    <Position X="78" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnDestroy" Hidden="true" />
+      <Method Name="Remove" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IAQRAAAAACAAAAAAAAAABAgAAAAAAAAEABAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Backend\RemoveDelay.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="afterDelayEvent" />
+      <Field Name="atStart" />
+      <Field Name="delay" />
+      <Field Name="destruct" />
+      <Field Name="timer" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Bullet">
+    <Position X="53.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="AliveLoop" Hidden="true" />
+      <Method Name="OnBecameInvisible" Hidden="true" />
+      <Method Name="OnDestroy" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAEAAEAAAAAAAAAAQAAQAAAQAAABAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Elements\Bullet.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="bulletLayer" />
+      <Field Name="rb" />
+      <Field Name="speed" />
+      <Field Name="timeAlive" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BulletHolder">
+    <Position X="64.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Elements\BulletHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BulletShooter">
+    <Position X="80.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAqAAAAAAAAgAAAAAACAEIAIAABgAAAQAIgA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Elements\BulletShooter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="atFire" />
+      <Field Name="bullet" />
+      <Field Name="bulletHolder" />
+      <Field Name="bullets" />
+      <Field Name="cooldown" />
+      <Field Name="fireTrans" />
+      <Field Name="juice" />
+      <Field Name="last" />
+      <Field Name="particle" />
+      <Field Name="screenshakeIntensity" />
+      <Field Name="screenshakeTime" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Damager">
+    <Position X="123" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnTriggerEnter2D" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAABAAAAEAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Elements\Damager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="damage" />
+      <Field Name="removeAfter" />
+      <Field Name="team" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EnemySpawner">
+    <Position X="37.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="SetNewWave" Hidden="true" />
+      <Method Name="SpawnEnemy" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+      <Method Name="WaveCountdown" Hidden="true" />
+      <Method Name="WaveLoop" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gAAAQYAAAKAABAEAAAACAEAAEAAAIAAAAABAIEgQACA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Elements\EnemySpawner.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="active" />
+      <Field Name="currentCooldown" />
+      <Field Name="currentEnemy" />
+      <Field Name="currentEnemyCount" />
+      <Field Name="currentWave" />
+      <Field Name="currentWaveCount" />
+      <Field Name="gameOverScreen" />
+      <Field Name="lastSpawned" />
+      <Field Name="path" />
+      <Field Name="waveCooldown" />
+      <Field Name="waves" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Entity">
+    <Position X="66.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Field Name="anims" Hidden="true" />
+      <Method Name="Flash" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAgEAAAiAAAAAgAAAQACBBABCQAAIAAAhAQEIIAyA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Elements\Entity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="audio" />
+      <Field Name="deactivate" />
+      <Field Name="deathEffect" />
+      <Field Name="flash" />
+      <Field Name="flashTimer" />
+      <Field Name="flashTimerShort" />
+      <Field Name="godmode" />
+      <Field Name="hitstopTime" />
+      <Field Name="hp" />
+      <Field Name="iFrameTime" />
+      <Field Name="invincible" />
+      <Field Name="juice" />
+      <Field Name="last" />
+      <Field Name="maxHP" />
+      <Field Name="onDeath" />
+      <Field Name="onHit" />
+      <Field Name="screenshakeIntensity" />
+      <Field Name="screenshakeTime" />
+      <Field Name="sprite" />
+      <Field Name="team" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EnemyWave" Collapsed="true">
+    <Position X="37.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Systems\EnemyWave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoneyBag">
+    <Position X="1.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAgAIAACAIAAAAAAAAAAAAACAAAACAAAABAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Systems\MoneyBag.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="moneyUI" />
+      <Field Name="currentMoney" />
+      <Property Name="CURRENTMONEY" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Objective">
+    <Position X="125.25" Y="4.25" Width="1.5" />
+    <Members>
+      <Field Name="anim" Hidden="true" />
+      <Method Name="GameOver" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAhAAAACAAAACAAAAAAAiAABAAAAAAAQAAgAAAACI=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Systems\Objective.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="atDamage" />
+      <Field Name="atDeath" />
+      <Field Name="currentHP" />
+      <Field Name="gameOverScreen" />
+      <Field Name="maxHP" />
+      <Field Name="sliders" />
+      <Field Name="spawner" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ObjectiveDamageDealer">
+    <Position X="21.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="OnTriggerEnter2D" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAACAAgAAAAAAAAAAAAECAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Systems\ObjectiveDamageDealer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="damage" />
+      <Field Name="hitName" />
+      <Field Name="hitTag" />
+      <Field Name="objective" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Path">
+    <Position X="39.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="NormalizeZAxis" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAEAAAKAACAACAAAAAAAAAAAAAAAEAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Systems\Path.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="line" />
+      <Field Name="points" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="RankCalculator">
+    <Position X="69" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgEAAAAACAAAAAAAAAIAAAAABAQAAAKA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Systems\RankCalculator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="currentRank" />
+      <Field Name="enemySpawner" />
+      <Field Name="moneyBag" />
+      <Field Name="moneyScore" />
+      <Field Name="rankColor" />
+      <Field Name="ranks" />
+      <Field Name="totalScore" />
+      <Field Name="waveScore" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ScoreRank" Collapsed="true">
+    <Position X="130" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAABAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Systems\ScoreRank.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shop">
+    <Position X="111.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAEIAAACAAAAAAAAQAAAAAAAAAAAAAAAABAAACAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Systems\Shop.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="itemContainer" />
+      <Field Name="moneyBag" />
+      <Field Name="onBuy" />
+      <Field Name="onNoBuy" />
+      <Field Name="spawnPos" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ShopButton">
+    <Position X="127.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAQAAAAAAAAQAAAAwAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Util\Gameplay\Systems\ShopButton.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cost" />
+      <Field Name="disableOnPress" />
+      <Field Name="item" />
+      <Field Name="shop" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GameCamera">
+    <Position X="82.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="CheckIfBordered" Hidden="true" />
+      <Method Name="FixedUpdate" Hidden="true" />
+      <Method Name="GetClampedPos" Hidden="true" />
+      <Method Name="hitstopLoop" Hidden="true" />
+      <Method Name="ScreenshakeLoop" Hidden="true" />
+      <Method Name="SetCamPos" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgIAAIAjAAAAAAIAAAAAAEIAAAAIIAQAQAAAgAgQA=</HashCode>
+      <FileName>Assets\Scripts\Util\Meta\GameCamera.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="cam_offset" />
+      <Field Name="hitstopTime" />
+      <Field Name="minusX_confiner" />
+      <Field Name="minusY_confiner" />
+      <Field Name="screenshakeIntensity" />
+      <Field Name="screenshakeMod" />
+      <Field Name="screenshakeTime" />
+      <Field Name="smoothing" />
+      <Field Name="target" />
+      <Field Name="X_confiner" />
+      <Field Name="Y_confiner" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="MouseFollower">
+    <Position X="84.75" Y="4.25" Width="1.5" />
+    <Members>
+      <Method Name="Update" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAIA=</HashCode>
+      <FileName>Assets\Scripts\Util\Meta\MouseFollower.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="onClick" />
+      <Field Name="trail" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Boolean" Collapsed="true">
+    <Position X="66.75" Y="7" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Int32" Collapsed="true">
+    <Position X="63.5" Y="7" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnityEngine.Events.UnityEvent" Collapsed="true">
+    <Position X="80.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.SpriteRenderer" Collapsed="true">
+    <Position X="67" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Type" Collapsed="true">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnityEngine.MonoBehaviour" Collapsed="true">
+    <Position X="64.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Collections.Generic.List&lt;T&gt;" Collapsed="true">
+    <Position X="37.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Single" Collapsed="true">
+    <Position X="71" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnityEngine.Camera" Collapsed="true">
+    <Position X="54.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Transform" Collapsed="true">
+    <Position X="77" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TMPro.TextMeshProUGUI" Collapsed="true">
+    <Position X="79.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnityEngine.BoxCollider2D" Collapsed="true">
+    <Position X="17.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.String" Collapsed="true">
+    <Position X="32.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnityEngine.GameObject" Collapsed="true">
+    <Position X="77.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Sprite" Collapsed="true">
+    <Position X="19.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.AudioClip" Collapsed="true">
+    <Position X="57" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.AudioSource" Collapsed="true">
+    <Position X="50" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.LineRenderer" Collapsed="true">
+    <Position X="39.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Rigidbody2D" Collapsed="true">
+    <Position X="69.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.UI.Toggle" Collapsed="true">
+    <Position X="48" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnityEngine.UI.Slider" Collapsed="true">
+    <Position X="88.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="UnityEngine.WaitForSeconds" Collapsed="true">
+    <Position X="83" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Grid" Collapsed="true">
+    <Position X="73.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.ParticleSystem" Collapsed="true">
+    <Position X="80.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.TrailRenderer" Collapsed="true">
+    <Position X="84.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Struct Name="UnityEngine.Vector2" Collapsed="true">
+    <Position X="60.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="UnityEngine.Color" Collapsed="true">
+    <Position X="60.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="UnityEngine.Vector3" Collapsed="true">
+    <Position X="82.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Enum Name="DG.Tweening.Ease" Collapsed="true">
+    <Position X="51" Y="7.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Enum Name="DG.Tweening.LoopType" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

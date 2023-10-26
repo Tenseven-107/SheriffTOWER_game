@@ -6,14 +6,16 @@ using UnityEngine;
 
 public class TweenScaler : MonoBehaviour
 {
-    [SerializeField] Vector2 startScale = Vector2.one;
-    [SerializeField] Vector2 endScale = Vector2.zero;
+    // Tween used for a scaling effect
 
-    [SerializeField] float duration = 1f;
-    [SerializeField] Ease ease = Ease.Linear;
+    [SerializeField] Vector2 startScale = Vector2.one; // Start scale
+    [SerializeField] Vector2 endScale = Vector2.zero; // Final scale value
 
-    [SerializeField] bool looping = false;
-    [SerializeField] bool atStart = true;
+    [SerializeField] float duration = 1f; // Time of the tween
+    [SerializeField] Ease ease = Ease.Linear; // Easing of the tween
+
+    [SerializeField] bool looping = false; // If the tween should loop
+    [SerializeField] bool atStart = true; // If the tween should be played at start
 
 
     private void Start()
@@ -36,7 +38,7 @@ public class TweenScaler : MonoBehaviour
         }
     }
 
-
+    // Kills tween when changing scenes or getting destroyed prematurely to avoid errors
     private void OnDestroy()
     {
         DOTween.Kill(gameObject);

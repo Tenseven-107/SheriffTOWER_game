@@ -6,14 +6,16 @@ using UnityEngine;
 
 public class TweenMover : MonoBehaviour
 {
-    [SerializeField] Vector2 startPosition = Vector2.zero;
-    [SerializeField] Vector2 endPosition = Vector2.zero;
+    // Tween used for moving objects, like sprites, for small animations
 
-    [SerializeField] float duration = 1f;
-    [SerializeField] Ease ease = Ease.Linear;
+    [SerializeField] Vector2 startPosition = Vector2.zero; // Starting position
+    [SerializeField] Vector2 endPosition = Vector2.zero; // Final position
 
-    [SerializeField] bool looping = false;
-    [SerializeField] bool atStart = true;
+    [SerializeField] float duration = 1f; // Time of the tween
+    [SerializeField] Ease ease = Ease.Linear; // Easing of the tween. Like for example bobbing up and down in a bouncy manor or moving in a linear fashion
+
+    [SerializeField] bool looping = false; // If the tween should loop
+    [SerializeField] bool atStart = true; // If the tween should be played at start
 
 
     private void Start()
@@ -36,7 +38,7 @@ public class TweenMover : MonoBehaviour
         }
     }
 
-
+    // Kills tween when changing scenes or getting destroyed prematurely to avoid errors
     private void OnDestroy()
     {
         DOTween.Kill(gameObject);

@@ -8,18 +8,20 @@ using static UnityEngine.GraphicsBuffer;
 
 public class PlayerWeapon : MonoBehaviour
 {
-    [SerializeField] float reloadTime = 1f;
-    [SerializeField] int bullets = 6;
-    bool reloading = false;
-    int currentBullets = 6;
+    // A weapon a player can use to attack with. Has ammo to limit usage
 
-    Transform spriteTrans;
-    SpriteRenderer sprite;
+    [SerializeField] float reloadTime = 1f; // Time for reloading
+    [SerializeField] int bullets = 6; // How many ammo the player has
+    bool reloading = false; // If the player is currently reloading
+    int currentBullets = 6; // Current ammo of the player
 
-    BulletShooter shooter;
-    Camera cam;
+    Transform spriteTrans; // Transform of the weapon
+    SpriteRenderer sprite; // Weapon sprite
 
+    BulletShooter shooter; // Object that shoots projectiles
+    Camera cam; // Game camera
 
+    // Set up
     private void Start()
     {
         currentBullets = 6;
@@ -43,7 +45,7 @@ public class PlayerWeapon : MonoBehaviour
         FireLoop();
     }
 
-
+    // If the player is pressing the fire button, are not reloading and have ammo; they fire a projectile
     void FireLoop()
     {
         if (Input.GetMouseButtonDown(0) && currentBullets > 0 && reloading == false)
@@ -53,18 +55,19 @@ public class PlayerWeapon : MonoBehaviour
 
             if (currentBullets <= 0)
             {
-                spriteTrans.DOLocalRotate(new Vector3(0, 0, 360), reloadTime, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.OutElastic);
+                spriteTrans.DOLocalRotate(new Vector3(0, 0, 360), reloadTime, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.OutElastic); // Cool speen animation
                 StartCoroutine(ReloadLoop());
             }
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            spriteTrans.DOLocalRotate(new Vector3(0, 0, 360), reloadTime, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.OutElastic);
+            spriteTrans.DOLocalRotate(new Vector3(0, 0, 360), reloadTime, RotateMode.FastBeyond360).SetRelative(true).SetEase(Ease.OutElastic); // Cool speen animation
             StartCoroutine(ReloadLoop());
         }
     }
 
+    // Reloading the player weapon. After the reloadtime, the player has ammo again
     IEnumerator ReloadLoop()
     {
         reloading = true;
@@ -74,7 +77,7 @@ public class PlayerWeapon : MonoBehaviour
         yield break;
     }
 
-
+    // Logic for making the weapon point to the mouse
     private void PointToMouse()
     {
         Vector2 mouseScreenPos = Input.mousePosition;

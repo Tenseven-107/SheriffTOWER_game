@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class StartColorTween : MonoBehaviour
 {
-    [SerializeField] float time = 0.1f;
-    [SerializeField] Color startColor = Color.clear;
-    [SerializeField] Color endColor = Color.white;
-    [SerializeField] bool atStart = true;
+    // Tween that plays effect of going from one color to another
 
-    SpriteRenderer sprite;
+    [SerializeField] float time = 0.1f; // Time of tween
+    [SerializeField] Color startColor = Color.clear; // First color
+    [SerializeField] Color endColor = Color.white; // Last color
+    [SerializeField] bool atStart = true; // If should be played at start
+
+    SpriteRenderer sprite; // Sprite that will play color effect
 
 
     void Start()
@@ -26,6 +28,7 @@ public class StartColorTween : MonoBehaviour
         DOTweenModuleSprite.DOColor(sprite, endColor, time).SetId(gameObject);
     }
 
+    // Kills tween when changing scenes or getting destroyed prematurely to avoid errors
     private void OnDestroy()
     {
         DOTween.Kill(gameObject);

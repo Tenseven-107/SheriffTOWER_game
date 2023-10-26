@@ -6,15 +6,17 @@ using UnityEngine;
 
 public class TweenRotater : MonoBehaviour
 {
-    [SerializeField] float initialRotation = 0;
-    [SerializeField] float finalRotation = 0;
+    // Tween for a rotating effect
 
-    [SerializeField] float duration = 1f;
-    [SerializeField] Ease ease = Ease.Linear;
-    [SerializeField] LoopType loop = LoopType.Yoyo;
+    [SerializeField] float initialRotation = 0; // First point of rotation
+    [SerializeField] float finalRotation = 0; // Final point of rotation
 
-    [SerializeField] bool looping = false;
-    [SerializeField] bool atStart = true;
+    [SerializeField] float duration = 1f; // Time of the tween
+    [SerializeField] Ease ease = Ease.Linear; // Easing of the rotation
+    [SerializeField] LoopType loop = LoopType.Yoyo; // How the effect should loop, like resetting when reaching the final rotation or moving back and forth
+
+    [SerializeField] bool looping = false; // If the tween should loop
+    [SerializeField] bool atStart = true; // If the tween should be looped
 
 
     private void Start()
@@ -38,7 +40,7 @@ public class TweenRotater : MonoBehaviour
     }
 
 
-
+    // Kills tween when changing scenes or getting destroyed prematurely to avoid errors
     private void OnDestroy()
     {
         DOTween.Kill(gameObject);

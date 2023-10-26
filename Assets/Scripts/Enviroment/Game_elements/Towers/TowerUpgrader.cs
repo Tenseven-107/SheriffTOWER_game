@@ -9,42 +9,46 @@ using UnityEngine.Events;
 
 public class TowerUpgrader : MonoBehaviour
 {
-    [SerializeField] List<TowerUpgradeConstruct> towerUpgrades = new List<TowerUpgradeConstruct>();
-    public int nextUpgrade = 0;
-    public bool canUpgrade = true;
+    // Upgrades towers when BuyUpgrade() is called
 
+    [SerializeField] List<TowerUpgradeConstruct> towerUpgrades = new List<TowerUpgradeConstruct>(); // List of all the upgrades for this tower
+    public int nextUpgrade = 0; // Number of the next upgrade
+    public bool canUpgrade = true; // If tower can be upgraded
+
+    // Class of the tower
     [SerializeField] MonoBehaviour towerMono;
     Type towerClass;
 
-    SpriteRenderer sprite;
+    SpriteRenderer sprite; // Sprite of the tower
 
-    MoneyBag moneyBag;
+    MoneyBag moneyBag; // Moneybag with all the players money
 
-    [SerializeField] UnityEvent onUpgrade;
-    [SerializeField] UnityEvent onNoUpgrade;
+    [SerializeField] UnityEvent onUpgrade; // Invoked when upgraded
+    [SerializeField] UnityEvent onNoUpgrade; // Called when not enough money for upgrade
 
 
 
     private void Start()
     {
-        towerClass = towerMono.GetType();
+        towerClass = towerMono.GetType(); // Sets the class reference of the tower to the type of the tower
 
         canUpgrade = true;
 
-        GameObject bagObject = GameObject.FindWithTag("MoneyBag");
-        moneyBag = bagObject.GetComponent<MoneyBag>();
+        GameObject bagObject = GameObject.FindWithTag("MoneyBag"); // Getting the moneybag gameobject
+        moneyBag = bagObject.GetComponent<MoneyBag>(); // Setting the moneybag reference to the moneybag gameobject's moneybag componnent
 
         sprite = GetComponentInChildren<SpriteRenderer>();
     }
 
 
-
+    // Buy upgrade
     public void BuyUpgrade()
     {
-        if (canUpgrade == true)
+        if (canUpgrade == true) // Checks if the tower can be upgraded
         {
-            int cost = towerUpgrades[nextUpgrade].cost;
+            int cost = towerUpgrades[nextUpgrade].cost; // Cost of this upgrade
 
+            // Check if money can be removed from moneybag, if so, upgrades tower
             if (moneyBag.CheckIfCanRemove(cost) == true)
             {
                 moneyBag.RemoveMoney(cost);
@@ -56,9 +60,10 @@ public class TowerUpgrader : MonoBehaviour
         }
     }
 
+    // Upgrades stats of the tower depending on its class
     void Upgrade()
     {
-        TowerUpgradeConstruct upgrade = towerUpgrades[nextUpgrade];
+        TowerUpgradeConstruct upgrade = towerUpgrades[nextUpgrade]; // Gets the current upgrade used to upgrade the tower
         nextUpgrade++;
 
         if (nextUpgrade >= towerUpgrades.Count)
@@ -137,7 +142,7 @@ public class TowerUpgrader : MonoBehaviour
         }
     }
 
-
+    // Gets cost of the next upgrade
     public int GetCost()
     {
         int cost = towerUpgrades[nextUpgrade].cost;

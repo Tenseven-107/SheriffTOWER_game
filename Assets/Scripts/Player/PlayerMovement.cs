@@ -7,29 +7,30 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Movement script of the player
 
-    float speed = 0;
-    [SerializeField] float maxSpeed = 7.5f;
-    [SerializeField] float acceleration = 0.5f;
-    Vector2 velocity = Vector2.zero;
-    Rigidbody2D rb;
+    float speed = 0; // Current speed of the player
+    [SerializeField] float maxSpeed = 7.5f; // Maximum speed of the player
+    [SerializeField] float acceleration = 0.5f; // Acceleration of the player
+    Vector2 velocity = Vector2.zero; // The current velocity of the player, used for moving the player around without directly changing the position 
+    Rigidbody2D rb;// Player object's rigidbody
 
-    [SerializeField] float dashCooldown = 0.45f;
-    [SerializeField] float dashTime = 0.12f;
-    [SerializeField] float dashSpeed = 25.5f;
-    float normalSpeed;
-    float lastDash;
+    [SerializeField] float dashCooldown = 0.45f; // Cooldown of the dash
+    [SerializeField] float dashTime = 0.12f; // Time of the player dash
+    [SerializeField] float dashSpeed = 25.5f; // Speed of the player dash
+    float normalSpeed; // Normal speed of the player
+    float lastDash; // Last time the player dashed
 
-    [SerializeField] GameObject torsoObject;
-    [SerializeField] GameObject feetObject;
-    [SerializeField] GameObject hitbox;
-    public enum EquipState { UNARMED, ARMED, ITEM };
+    [SerializeField] GameObject torsoObject; // The torso of the player
+    [SerializeField] GameObject feetObject; // The legs of the sprite
+    [SerializeField] GameObject hitbox; // Player objects hitbox, collider that recieves hits
+    public enum EquipState { UNARMED, ARMED, ITEM }; // Animation states of the player
     [SerializeField] public EquipState equip;
 
-    [SerializeField] UnityEvent onDash;
+    [SerializeField] UnityEvent onDash; // Invoked when the player dashes
 
 
-    // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-    // Update is called once per frame
+    // Runs functions in their correspondent update functions
     void FixedUpdate()
     {
         Movement();
@@ -50,18 +51,22 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-
+    // Movement of the player
     void Movement()
     {
         rb.velocity = Vector2.zero;
         rb.angularVelocity = 0;
 
+        // Getting the movement input
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 
         Vector2 inputVector = new Vector2(inputX, inputY);
+
+        // Velocity is the input vector which is multiplied byt the current speed of the player
         velocity = inputVector * speed * Time.deltaTime;
 
+        // Adds speed when the player is pressing the movement keys. returns to 0 when none are pressed
         if (inputVector != Vector2.zero)
         {
             speed += acceleration;
@@ -72,18 +77,20 @@ public class PlayerMovement : MonoBehaviour
             speed = 0;
         }
 
-        rb.MovePosition(rb.position + velocity);
+        rb.MovePosition(rb.position + velocity); // Moves the player
     }
 
 
-
+    // Player dashing
     void Dashing()
     {
+        // Checks if the dashing cooldown is over
         if (Time.time - lastDash < dashCooldown)
         {
             return;
         }
 
+        // When dashing key is pressed, the player dashes, increasing speed and deactivating the hitbox
         if (Input.GetKeyDown(KeyCode.Space))
         {
             lastDash = Time.time;
@@ -97,7 +104,8 @@ public class PlayerMovement : MonoBehaviour
             onDash.Invoke();
         }
     }
-
+    
+    // At the end of the dash the player returns to normal speed. Hitbox gets enabled again
     IEnumerator Dash()
     {
         yield return new WaitForSeconds(dashTime);
@@ -107,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-
+    // Playing animations
     void SetAnimations()
     {
         SpriteRenderer torso = torsoObject.GetComponent<SpriteRenderer>();

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TowerMelee : MonoBehaviour
 {
+    // Logic for Melee towers to attack enemies within range
+
     TowerMeleeDamager damager;
     TowerDetection area;
 

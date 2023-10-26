@@ -6,13 +6,15 @@ using UnityEngine;
 
 public class BattleMusicPlayer : MonoBehaviour
 {
-    [SerializeField] float fadeDuration = 0.5f;
+    // Plays battlemusic and fades it when the wave is over, also fades main musicplayer
+
+    [SerializeField] float fadeDuration = 0.5f; // Duration of fade object
 
     public AudioClip musicClip; // List of songs
     AudioSource musicSource; // Audiosource of the player
 
-    [SerializeField] EnemySpawner spawner;
-    AudioSource musicPlayer;
+    [SerializeField] EnemySpawner spawner; // Enemyspawner
+    AudioSource musicPlayer; // Normal music player
 
 
     // Set up
@@ -34,6 +36,7 @@ public class BattleMusicPlayer : MonoBehaviour
     }
 
 
+    // Fades battle music and normal musicplayers in and out when necessary
     private void Update()
     {
         if (spawner.active == true)
@@ -55,12 +58,12 @@ public class BattleMusicPlayer : MonoBehaviour
         }
     }
 
-
+    // Fade effect
     IEnumerator StartFade(AudioSource source, float duration, float targetVolume)
     {
         float currentTime = 0;
         float start = source.volume;
-        while (currentTime < duration)
+        while (currentTime < duration) // fades until the current time is higher then the duration value of the fade
         {
             currentTime += Time.deltaTime;
             source.volume = Mathf.Lerp(start, targetVolume, currentTime / duration);

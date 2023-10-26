@@ -5,25 +5,27 @@ using UnityEngine.Events;
 
 public class PlayerPocket : MonoBehaviour
 {
-    [SerializeField] public GameObject heldItem;
-    ItemData itemData;
+    // The storage of the current item the player is holding
 
-    [SerializeField] public bool itemCanUpgrade = false;
+    [SerializeField] public GameObject heldItem; // Current held item
+    ItemData itemData; // Data of the currently held item
 
-    [SerializeField] public GameObject weapon;
-    [SerializeField] Transform weaponSlot;
+    [SerializeField] public bool itemCanUpgrade = false; // If the held item is able to upgrade towers
 
-    [SerializeField] SpriteRenderer itemSprite;
-    PlayerMovement player;
+    [SerializeField] public GameObject weapon; // if the held item is a weapon
+    [SerializeField] Transform weaponSlot; // The transform where the player weapon should be spawned in
 
-    [SerializeField] Transform dropPos;
-    PlacementMarker placementMarker;
+    [SerializeField] SpriteRenderer itemSprite; // Sprite of the item
+    PlayerMovement player; // Movement script of the player
 
-    [SerializeField] UnityEvent onAction;
+    [SerializeField] Transform dropPos; // Location where items will be dropped
+    PlacementMarker placementMarker; // Marker to show where towers will be placed
+
+    [SerializeField] UnityEvent onAction; // Invoked when an item is dropped or picked up
 
 
-    float bufferTime = 1f;
-    bool canDrop = false;
+    float bufferTime = 1f; // Cooldown for picking up and dropping items
+    bool canDrop = false; // If the player is able to drop
 
 
     private void Start()
@@ -35,11 +37,13 @@ public class PlayerPocket : MonoBehaviour
 
     private void Update()
     {
+        // Drops the item when key is pressed
         if (Input.GetKeyDown(KeyCode.E) && heldItem != null && canDrop == true)
         {
             DropItem();
         }
 
+        // Shows a marker of where a tower will be placed if the currently held item is a tower
         if (heldItem != null && itemData.type == ItemData.ItemTypes.TOWER)
         {
             placementMarker.isActive = true;
@@ -48,9 +52,10 @@ public class PlayerPocket : MonoBehaviour
         else{ placementMarker.isActive = false; }
     }
 
-
+    // Equip a new item
     public void AddItem(GameObject newItem)
     {
+        // Drops the currently held item if the player is currently holding an item
         if (heldItem != null)
         {
             DropItem();
@@ -59,7 +64,7 @@ public class PlayerPocket : MonoBehaviour
         onAction.Invoke();
 
         canDrop = false;
-        StartCoroutine(PickupBuffer());
+        StartCoroutine(PickupBuffer()); // Starts cooldown for dropping and picking up
 
         itemData = newItem.GetComponent<ItemData>();
         heldItem = newItem;
@@ -86,6 +91,7 @@ public class PlayerPocket : MonoBehaviour
     }
 
 
+    // Drops the currently held item
     void DropItem()
     {
         onAction.Invoke();
