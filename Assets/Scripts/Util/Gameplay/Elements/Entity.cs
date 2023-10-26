@@ -19,7 +19,6 @@ public class Entity : MonoBehaviour
     public bool deactivate = true; // If entity should deactivate on death
 
     bool flash = true; // If enemy can flash
-    WaitForSeconds flashTimer = new WaitForSeconds(0.05f);
     WaitForSeconds flashTimerShort = new WaitForSeconds(0.025f);
     public SpriteRenderer sprite;
     public GameObject deathEffect;
@@ -88,17 +87,13 @@ public class Entity : MonoBehaviour
     // Play hit flash animation
     IEnumerator Flash()
     {
-        Color color = sprite.color;
-
-        yield return flashTimer;
-
         for (float n = 0; n < iFrameTime; n += 0.1f)
         {
             if (flash)
             {
                 sprite.color = Color.red;
                 yield return flashTimerShort;
-                sprite.color = color;
+                sprite.color = Color.white;
                 yield return flashTimerShort;
             }
             else break;
